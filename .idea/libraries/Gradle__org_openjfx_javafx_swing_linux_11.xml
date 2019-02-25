@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openjfx:javafx-swing:linux:11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-swing/11/86e2c4feb81f5147bbb5e662b0892a61535a7472/javafx-swing-11-linux.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-swing/11/27547f715d5f790f25b8ba719a425040422b9a3b/javafx-swing-11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

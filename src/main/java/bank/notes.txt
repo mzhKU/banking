@@ -1,0 +1,2 @@
+Questions:
+- In the client app: the text fields are not supposed to be used to adjust the values. Correct?
