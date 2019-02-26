@@ -15,63 +15,34 @@ public class BankServer {
 
         bank.Bank bank = new bank.local.Driver.Bank();
 
-        /*
-        try(ServerSocket server = new ServerSocket(serverPort))  {
-            System.out.println("Started server");
-            while(true) {
+        try (ServerSocket server = new ServerSocket(serverPort)) {
+            System.out.println("Startet Bank Server on port " + server.getLocalPort());
+            while (true) {
                 Socket s = server.accept();
                 Thread t = new Thread(new BankHandler(s, bank));
                 t.start();
             }
         }
-        */
-
-        try (ServerSocket server = new ServerSocket(serverPort)) {
-            System.out.println("Startet Bank Server on port " + server.getLocalPort());
-            while (true) {
-
-                Socket s = server.accept();
-                Thread t = new Thread(() -> {
-                    try(s) {
-                        DataOutputStream out = new DataOutputStream(s.getOutputStream());
-                        out.writeUTF("Server connected.");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-                t.start();
-
-                /*
-                // Return a new socket when connection is established.
-                try (Socket s = server.accept()) {
-                    DataOutputStream out = new DataOutputStream(s.getOutputStream());
-                    out.writeUTF("Server Connection Request Confirmation.");
-                    out.flush();
-                    System.out.println("Done serving " + s);
-                }
-                */
-            }
-        }
     }
 
     private static class BankHandler implements Runnable {
-        private final Socket socket;
+
+        private final Socket s;
+        private bank.Bank bank;
+
         private BankHandler(Socket socket, bank.Bank bank) {
-            this.socket = socket;
+            this.s = socket;
+            this.bank = bank;
         }
 
         @Override
         public void run() {
-            System.out.println("Connection from " + socket);
-
-            try(Socket s = socket;
-                DataInputStream in = new DataInputStream(s.getInputStream());) {
-                System.out.println(in.readUTF());
-                System.out.println("here");
+            System.out.println("Connection from " + s);
+            try(this.s) {
+                // Todo: How to handle the incoming instructions?
             } catch (IOException e) {
-                System.err.println(e);
-                throw new RuntimeException(e);
+                System.out.println(e);
             }
-        }
+       }
     }
 }

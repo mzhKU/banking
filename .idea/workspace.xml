@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" afterDir="false" />
     </list>
@@ -70,13 +66,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="11062" />
+          <entry key="java" value="12680" />
           <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11062" />
+          <entry key="JAVA" value="12680" />
           <entry key="PLAIN_TEXT" value="111" />
         </counts>
       </usages-collector>
@@ -106,10 +102,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="164">
-                  <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+                <state relative-caret-position="203">
+                  <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#1215#1216#0" expanded="true" />
+                    <element signature="e#1242#1243#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -122,12 +120,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="337">
-                  <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+                <state relative-caret-position="552">
+                  <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1688#1689#0" expanded="true" />
-                    <element signature="e#1732#1733#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -487,8 +483,8 @@
         <option value="$PROJECT_DIR$/src/main/java/bank/notes.txt" />
         <option value="$PROJECT_DIR$/src/main/java/bank/local/DriverTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" />
       </list>
     </option>
   </component>
@@ -591,7 +587,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551211862487" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551214213456" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -730,7 +726,7 @@
       <workItem from="1550606829937" duration="4262000" />
       <workItem from="1550929823065" duration="31659000" />
       <workItem from="1551195845599" duration="2260000" />
-      <workItem from="1551208223371" duration="2113000" />
+      <workItem from="1551208223371" duration="4459000" />
     </task>
     <servers />
   </component>
@@ -767,7 +763,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44146000" />
+    <option name="totallyTimeSpent" value="46492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
@@ -781,7 +777,7 @@
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.15601704" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.31846473" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49944136" weight="0.21581197" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49944136" weight="0.21576764" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005587" side_tool="true" weight="0.3258547" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32985386" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
@@ -1007,22 +1003,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+        <state relative-caret-position="203">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+        <state relative-caret-position="552">
+          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
