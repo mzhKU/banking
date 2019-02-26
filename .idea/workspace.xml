@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="" />
+    <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/DriverTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/DriverTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -43,146 +52,125 @@
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="39" />
+          <entry key="java" value="50" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="39" />
+          <entry key="JAVA" value="50" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6954" />
+          <entry key="java" value="9845" />
           <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6954" />
+          <entry key="JAVA" value="9845" />
           <entry key="PLAIN_TEXT" value="111" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="bank-assignment-01" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50536275">
-      <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.6128205">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/Client.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="3107">
-                      <caret line="547" column="44" selection-start-line="547" selection-start-column="44" selection-end-line="547" selection-end-column="44" />
-                      <folding>
-                        <element signature="class#7486:7831" />
-                        <element signature="e#7870#8562#0" />
-                        <element signature="method#stop#0;class#Client#0" />
-                        <element signature="method#createFileMenu#0;class#Client#0" />
-                        <element signature="method#createTestMenu#0;class#Client#0" />
-                        <element signature="method#loadTest#0;class#Client#0" />
-                        <element signature="method#createHelpMenu#0;class#Client#0" />
-                        <element signature="method#showInfo#0;class#Client#0" />
-                        <element signature="method#showError#0;class#Client#0" />
-                        <element signature="method#showError#1;class#Client#0" />
-                        <element signature="method#newAccount#0;class#Client#0" />
-                        <element signature="method#createAccount#0;class#Client#0" />
-                        <element signature="method#createAccounts#0;class#Client#0" />
-                        <element signature="method#closeAccount#0;class#Client#0" />
-                        <element signature="method#deposit#0;class#Client#0" />
-                        <element signature="method#withdraw#0;class#Client#0" />
-                        <element signature="method#transfer#0;class#Client#0" />
-                        <element signature="method#refreshPresentationModel#0;class#Client#0" />
-                        <element signature="class#DoubleFilter#0;class#Client#0" />
-                        <element signature="class#StringDoubleConverter#0;class#Client#0" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="266">
-                      <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-                      <folding>
-                        <element signature="e#642#643#0" expanded="true" />
-                        <element signature="class#Account#0;class#Driver#0" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/main/java/bank/BankDriver.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state>
-                      <caret lean-forward="true" />
-                      <folding>
-                        <element signature="docComment;class#BankDriver#0" />
-                        <element signature="docComment;method#connect#0;class#BankDriver#0" />
-                        <element signature="docComment;method#disconnect#0;class#BankDriver#0" />
-                        <element signature="docComment;method#getBank#0;class#BankDriver#0" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/main/java/bank/BankDriver2.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="51">
-                      <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#982#983#0" expanded="true" />
-                    <element signature="e#1024#1025#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="166" column="31" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
+              <folding>
+                <element signature="class#7486:7831" />
+                <element signature="e#7870#8562#0" />
+                <element signature="method#createFileMenu#0;class#Client#0" />
+                <element signature="method#createTestMenu#0;class#Client#0" />
+                <element signature="method#loadTest#0;class#Client#0" />
+                <element signature="method#createHelpMenu#0;class#Client#0" />
+                <element signature="method#showInfo#0;class#Client#0" />
+                <element signature="method#showError#0;class#Client#0" />
+                <element signature="method#showError#1;class#Client#0" />
+                <element signature="method#newAccount#0;class#Client#0" />
+                <element signature="method#createAccount#0;class#Client#0" />
+                <element signature="method#createAccounts#0;class#Client#0" />
+                <element signature="method#closeAccount#0;class#Client#0" />
+                <element signature="method#deposit#0;class#Client#0" />
+                <element signature="method#withdraw#0;class#Client#0" />
+                <element signature="method#transfer#0;class#Client#0" />
+                <element signature="method#refreshPresentationModel#0;class#Client#0" />
+                <element signature="class#DoubleFilter#0;class#Client#0" />
+                <element signature="class#StringDoubleConverter#0;class#Client#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#624#625#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="class#Account#0;class#Driver#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="979">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="734">
+              <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1607#1608#0" expanded="true" />
+                <element signature="e#1678#1679#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -521,9 +509,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/notes.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/local/DriverTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" />
       </list>
     </option>
   </component>
@@ -534,11 +523,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="47" />
+    <option name="x" value="983" />
     <option name="y" value="24" />
     <option name="width" value="937" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -626,7 +616,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551079324612" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551096616021" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -654,7 +644,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.BankServer">
+    <configuration name="BankServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bank.sockets.BankServer" />
+      <module name="bank-assignment_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bank.sockets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="bank.gui.Client" />
       <module name="bank-assignment_main" />
@@ -664,22 +667,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DriverTest.testAddAccountWithSameAccountNumberTwice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bank-assignment_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bank.local.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bank.local" />
-      <option name="MAIN_CLASS_NAME" value="bank.local.DriverTest" />
-      <option name="METHOD_NAME" value="testAddAccountWithSameAccountNumberTwice" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -734,18 +721,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Client" />
-      <item itemvalue="JUnit.DriverTest.testAddAccountWithSameAccountNumberTwice" />
       <item itemvalue="JUnit.DriverTest.testOverdraw" />
       <item itemvalue="JUnit.DriverTest.testDepositNegativeAmount" />
       <item itemvalue="JUnit.DriverTest.testGetInexistingAccount" />
+      <item itemvalue="Application.BankServer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.BankServer" />
         <item itemvalue="JUnit.DriverTest.testGetInexistingAccount" />
         <item itemvalue="JUnit.DriverTest.testDepositNegativeAmount" />
         <item itemvalue="JUnit.DriverTest.testOverdraw" />
-        <item itemvalue="JUnit.DriverTest.testAddAccountWithSameAccountNumberTwice" />
       </list>
     </recent_temporary>
   </component>
@@ -766,7 +753,8 @@
       <workItem from="1550591592411" duration="599000" />
       <workItem from="1550606740532" duration="61000" />
       <workItem from="1550606829937" duration="4262000" />
-      <workItem from="1550929823065" duration="22241000" />
+      <workItem from="1550929823065" duration="31659000" />
+      <workItem from="1551195845599" duration="254000" />
     </task>
     <servers />
   </component>
@@ -803,27 +791,28 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30355000" />
+    <option name="totallyTimeSpent" value="40027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="24" width="937" height="1056" extended-state="4" />
+    <frame x="983" y="24" width="937" height="1056" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
       <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" weight="0.32960895" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.3273743" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.34078214" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.31846473" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49944136" visible="true" weight="0.16346154" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49944136" weight="0.21680498" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005587" side_tool="true" weight="0.3258547" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32985386" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.19087137" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.18482906" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -858,10 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding>
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,10 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -880,17 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -938,22 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="docComment;class#Account#0" />
-            <element signature="docComment;method#getNumber#0;class#Account#0" />
-            <element signature="docComment;method#getOwner#0;class#Account#0" />
-            <element signature="docComment;method#isActive#0;class#Account#0" />
-            <element signature="docComment;method#deposit#0;class#Account#0" />
-            <element signature="docComment;method#withdraw#0;class#Account#0" />
-            <element signature="docComment;method#getBalance#0;class#Account#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/BankDriver2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -961,12 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding>
-            <element signature="docComment;class#Bank#0" />
-            <element signature="docComment;method#closeAccount#0;class#Bank#0" />
-            <element signature="docComment;method#getAccount#0;class#Bank#0" />
-            <element signature="docComment;method#transfer#0;class#Bank#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,23 +922,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/BankDriver2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="docComment;class#BankDriver#0" />
-            <element signature="docComment;method#connect#0;class#BankDriver#0" />
-            <element signature="docComment;method#disconnect#0;class#BankDriver#0" />
-            <element signature="docComment;method#getBank#0;class#BankDriver#0" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="class#Account#0;class#Driver#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3107">
-          <caret line="547" column="44" selection-start-line="547" selection-start-column="44" selection-end-line="547" selection-end-column="44" />
+        <state relative-caret-position="238">
+          <caret line="166" column="31" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
           <folding>
             <element signature="class#7486:7831" />
             <element signature="e#7870#8562#0" />
-            <element signature="method#stop#0;class#Client#0" />
             <element signature="method#createFileMenu#0;class#Client#0" />
             <element signature="method#createTestMenu#0;class#Client#0" />
             <element signature="method#loadTest#0;class#Client#0" />
@@ -1014,23 +981,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        <state relative-caret-position="979">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="734">
+          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
           <folding>
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="class#Account#0;class#Driver#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1678#1679#0" expanded="true" />
           </folding>
         </state>
       </provider>
