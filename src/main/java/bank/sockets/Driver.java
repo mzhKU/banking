@@ -34,11 +34,10 @@ public class Driver implements bank.BankDriver {
         in = new DataInputStream(new BufferedInputStream(s.getInputStream()));
         out = new DataOutputStream(new BufferedOutputStream(s.getOutputStream()));
 
-        /*
         String response = in.readUTF();
-        System.out.println(response);
+        System.out.println("Client received: " + response);
+        /*
         */
-        System.out.println(in.readUTF());
 
         bank = new SocketBank();
     }
@@ -53,9 +52,10 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public String createAccount(String owner) throws IOException {
-            out.writeUTF("createAccount:" + owner);
-            String res = in.readUTF();
-            return res;
+            // out.writeUTF("createAccount:" + owner);
+            // out.flush();
+            // String res = in.readUTF();
+            return "createAccount:" + owner;
         }
 
         @Override
