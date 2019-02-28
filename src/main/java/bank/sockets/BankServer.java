@@ -13,36 +13,47 @@ public class BankServer {
         // to the server.
         int serverPort = 1234;
 
-        bank.Bank bank = new bank.local.Driver.Bank();
+        // bank.Bank bank = new bank.local.Driver.Bank();
 
-        try (ServerSocket server = new ServerSocket(serverPort)) {
-            System.out.println("Startet Bank Server on port " + server.getLocalPort());
-            while (true) {
-                Socket s = server.accept();
-                Thread t = new Thread(new BankHandler(s, bank));
-                t.start();
-            }
+        ServerSocket server = new ServerSocket(serverPort);
+        System.out.println("Startet Bank Server on port " + server.getLocalPort());
+        while(true) {
+            Socket s = server.accept();
+            Thread t = new Thread(new BankHandler(s));
+            t.start();
         }
     }
 
     private static class BankHandler implements Runnable {
 
-        private final Socket s;
+        private Socket socket;
+        private DataOutputStream out;
+        private DataInputStream in;
         private bank.Bank bank;
 
-        private BankHandler(Socket socket, bank.Bank bank) {
-            this.s = socket;
-            this.bank = bank;
+        public BankHandler(Socket socket) {
+            this.socket = socket;
+            this.bank = new bank.local.Driver.Bank();
         }
 
         @Override
         public void run() {
-            System.out.println("Connection from " + s);
-            try(this.s) {
-                // Todo: How to handle the incoming instructions?
-            } catch (IOException e) {
-                System.out.println(e);
+            while(true) {
+                try {
+                    this.in = new DataInputStream(socket.getInputStream());
+                    this.out = new DataOutputStream(socket.getOutputStream());
+                    String arg = in.readUTF();
+                    switch(arg) {
+                        case "createAccount" :
+                            String owner = in.readUTF();
+                            String id = bank.createAccount(owner);
+                            this.out.writeUTF("" + id);
+                            break;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-       }
+        }
     }
 }
