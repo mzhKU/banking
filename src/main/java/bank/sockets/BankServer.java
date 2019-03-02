@@ -48,7 +48,8 @@ public class BankServer {
             while(true) {
                 try {
                     this.in = new DataInputStream(socket.getInputStream());
-                    this.out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+                    //this.out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+                    this.out = new DataOutputStream(socket.getOutputStream());
                     String arg = in.readUTF();
                     System.out.println("[Server]Command: " + arg);
                     // arg: "createOwner:<owner>"
@@ -86,6 +87,7 @@ public class BankServer {
                             ObjectOutputStream accountOutputStream = new ObjectOutputStream(socket.getOutputStream());
                             DataInputStream in  = new DataInputStream(socket.getInputStream());
                             accountOutputStream.writeObject(bank.getAccount(in.readUTF()));
+                            break;
                         case "getAccountNumbers" :
                             System.out.println("[Server]Get Account Numbers.");
                             ObjectOutputStream accountNumbersOutputStream = new ObjectOutputStream(socket.getOutputStream());
@@ -94,6 +96,7 @@ public class BankServer {
                         // ------------------------------------------------------------------
                         default:
                             System.out.println("No instruction");
+                            break;
                         // ------------------------------------------------------------------
                     }
                 } catch (IOException | ClassNotFoundException e) {

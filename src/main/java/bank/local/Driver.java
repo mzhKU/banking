@@ -97,7 +97,7 @@ public class Driver implements bank.BankDriver {
 		}
 	}
 
-	static class Account implements bank.Account {
+	static class Account implements bank.Account, java.io.Serializable {
 		private String number;
 		private String owner;
 		private double balance;

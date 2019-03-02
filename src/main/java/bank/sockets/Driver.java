@@ -79,12 +79,13 @@ public class Driver implements bank.BankDriver {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
-
             return accountNumbers;
         }
 
         @Override
         public Account getAccount(String number) throws IOException {
+            out.writeUTF("getAccount");
+            out.flush();
             out.writeUTF(number);
             out.flush();
             ObjectInputStream accountInputStream = new ObjectInputStream(s.getInputStream());
