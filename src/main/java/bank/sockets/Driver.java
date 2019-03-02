@@ -16,28 +16,25 @@ import java.util.TreeSet;
 //         banks.sockets.Driver localhost 1234
 public class Driver implements bank.BankDriver {
 
-    private Bank bank;
-    private int clientport;
-    private Socket s;
-    DataInputStream in;
-    DataOutputStream out;
+    private DataOutputStream out;
+    private DataInputStream  in;
+    private Socket           s;
+    private Bank             bank;
+    private int              clientport;
 
     @Override
     public void connect(String[] args) throws IOException {
         String host = args[0];
         int    port = Integer.valueOf(args[1]);
-        s = new Socket(host, port);
+        s           = new Socket(host, port);
 
         System.out.println("connecting to " + host + ":" + port);
-        System.out.println("connected to " + s.getRemoteSocketAddress());
+        System.out.println("connected to "  + s.getRemoteSocketAddress());
 
         // BufferedStream(InputStream): Bytes
         // DataStream                 : binary
         out = new DataOutputStream(new BufferedOutputStream(s.getOutputStream()));
         in = new DataInputStream(s.getInputStream());
-
-        // String response = in.readUTF();
-        // System.out.println("Client received: " + response);
 
         bank = new SocketBank();
     }
@@ -63,7 +60,18 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public boolean closeAccount(String number) throws IOException {
-            return false;
+            out.writeUTF("closeAccount");
+            out.flush();
+            out.writeUTF(number);
+            out.flush();
+            Boolean close = null;
+            try {
+                close = in.readBoolean();
+            } catch (IOException e) {
+                System.out.println(e.getStackTrace());
+                return false;
+            }
+            return close;
         }
 
         @Override
@@ -101,7 +109,7 @@ public class Driver implements bank.BankDriver {
         }
 
         @Override
-        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, OverdrawException, InactiveException {
+        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException {
             out.writeUTF("transfer");
             out.flush();
 

@@ -13,14 +13,13 @@ public class BankServer {
     private static bank.Bank bank = new bank.local.Driver.Bank();
 
     // ClassNotFoundException: if readObject() doesn't return the object type expected
-    public static void main(String args[]) throws IOException, ClassNotFoundException {
+    public static void main(String args[]) throws IOException {
 
         // Port is defined server side by the service provider
         // It has to be known by the client, to which server we're
         // connecting. The port is *not* provided from the client
         // to the server.
         int serverPort = 1234;
-
 
         ServerSocket server = new ServerSocket(serverPort);
         System.out.println("Startet Bank Server on port " + server.getLocalPort());
@@ -61,37 +60,40 @@ public class BankServer {
                             System.out.println("[Server]createAccount: " + owner);
                             System.out.println("[Server]id : " + id);
                             this.out.writeUTF("" + id);
-                            this.out.flush();
+                            // this.out.flush();
                             break;
                         // ------------------------------------------------------------------
                         case "transfer":
                             ObjectInputStream accountInputStream = new ObjectInputStream(in);
-                            try {
-                                bank.Account from = (bank.Account)accountInputStream.readObject();
-                                bank.Account to   = (bank.Account)accountInputStream.readObject();
-                                Double amount = in.readDouble();
-                                try {
-                                    bank.transfer(from, to, amount);
-                                } catch (InactiveException e) {
-                                    e.printStackTrace();
-                                } catch (OverdrawException e) {
-                                    e.printStackTrace();
-                                }
-                            } catch (ClassNotFoundException c) {
-                                throw new ClassNotFoundException();
-                            }
+                            bank.Account from = (bank.Account)accountInputStream.readObject();
+                            bank.Account to   = (bank.Account)accountInputStream.readObject();
+                            Double amount = in.readDouble();
+                            System.out.println("from.isActive: " + from.isActive() + ", to.isActive: " + to.isActive());
+                            bank.transfer(from, to, amount);
                             break;
                         // ------------------------------------------------------------------
                         case "getAccount" :
-                            System.out.println("[Server]Get Account.");
+                            System.out.println("[Server]Get account.");
                             ObjectOutputStream accountOutputStream = new ObjectOutputStream(socket.getOutputStream());
                             DataInputStream in  = new DataInputStream(socket.getInputStream());
                             accountOutputStream.writeObject(bank.getAccount(in.readUTF()));
                             break;
+                        // ------------------------------------------------------------------
                         case "getAccountNumbers" :
-                            System.out.println("[Server]Get Account Numbers.");
+                            System.out.println("[Server]Get account numbers.");
                             ObjectOutputStream accountNumbersOutputStream = new ObjectOutputStream(socket.getOutputStream());
                             accountNumbersOutputStream.writeObject(bank.getAccountNumbers());
+                            break;
+                        // ------------------------------------------------------------------
+                        case "closeAccount" :
+                            System.out.println("[Server]Close account.");
+                            String closeAccount = this.in.readUTF();
+                            if(bank.getAccount(closeAccount).isActive()) {
+                                bank.closeAccount(closeAccount);
+                                out.writeBoolean(true);
+                            } else {
+                                out.writeBoolean(false);
+                            }
                             break;
                         // ------------------------------------------------------------------
                         default:
@@ -99,9 +101,15 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                     }
-                } catch (IOException | ClassNotFoundException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                     break;
+                } catch (OverdrawException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (InactiveException e) {
+                    e.printStackTrace();
                 }
             }
         }

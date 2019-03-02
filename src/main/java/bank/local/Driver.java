@@ -77,7 +77,7 @@ public class Driver implements bank.BankDriver {
 
 		@Override
 		public bank.Account getAccount(String number) {
-			return accounts.get(number);
+            return accounts.get(number);
 		}
 
 		@Override
@@ -85,15 +85,14 @@ public class Driver implements bank.BankDriver {
 				throws IOException, InactiveException, OverdrawException {
 		    if(!from.isActive() || !to.isActive()) {
 		        throw new InactiveException("Inactive accounts involved in transfer.");
-            }
-            if(amount < 0.0) {
+            } else if (amount < 0.0) {
                 throw new IllegalArgumentException("Amount transfered must be positive");
-            }
-            if(from.getBalance() < amount) {
+            } else if(from.getBalance() < amount) {
                 throw new OverdrawException("Insufficient funds");
+            } else {
+                from.withdraw(amount);
+                to.deposit(amount);
             }
-            from.withdraw(amount);
-            to.deposit(amount);
 		}
 	}
 
@@ -135,7 +134,9 @@ public class Driver implements bank.BankDriver {
             if(amount < 0.0) {
                 throw new IllegalArgumentException("Deposited amount should be positive");
             }
-		    this.balance += amount;
+            else {
+                this.balance += amount;
+            }
 		}
 
 		@Override
