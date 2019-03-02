@@ -81,10 +81,15 @@ public class BankServer {
                             }
                             break;
                         // ------------------------------------------------------------------
+                        case "getAccount" :
+                            System.out.println("[Server]Get Account.");
+                            ObjectOutputStream accountOutputStream = new ObjectOutputStream(socket.getOutputStream());
+                            DataInputStream in  = new DataInputStream(socket.getInputStream());
+                            accountOutputStream.writeObject(bank.getAccount(in.readUTF()));
                         case "getAccountNumbers" :
                             System.out.println("[Server]Get Account Numbers.");
-                            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-                            out.writeObject(bank.getAccountNumbers());
+                            ObjectOutputStream accountNumbersOutputStream = new ObjectOutputStream(socket.getOutputStream());
+                            accountNumbersOutputStream.writeObject(bank.getAccountNumbers());
                             break;
                         // ------------------------------------------------------------------
                         default:

@@ -33,8 +33,8 @@ public class Driver implements bank.BankDriver {
 
         // BufferedStream(InputStream): Bytes
         // DataStream                 : binary
-        in = new DataInputStream(new BufferedInputStream(s.getInputStream()));
         out = new DataOutputStream(new BufferedOutputStream(s.getOutputStream()));
+        in = new DataInputStream(s.getInputStream());
 
         // String response = in.readUTF();
         // System.out.println("Client received: " + response);
