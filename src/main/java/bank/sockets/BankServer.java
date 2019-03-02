@@ -1,11 +1,19 @@
 package bank.sockets;
 
+import bank.Account;
+import bank.InactiveException;
+import bank.OverdrawException;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class BankServer {
-    public static void main(String args[]) throws IOException {
+
+    private static bank.Bank bank = new bank.local.Driver.Bank();
+
+    // ClassNotFoundException: if readObject() doesn't return the object type expected
+    public static void main(String args[]) throws IOException, ClassNotFoundException {
 
         // Port is defined server side by the service provider
         // It has to be known by the client, to which server we're
@@ -13,27 +21,26 @@ public class BankServer {
         // to the server.
         int serverPort = 1234;
 
-        // bank.Bank bank = new bank.local.Driver.Bank();
 
         ServerSocket server = new ServerSocket(serverPort);
         System.out.println("Startet Bank Server on port " + server.getLocalPort());
         while(true) {
             Socket s = server.accept();
-            Thread t = new Thread(new BankHandler(s));
+            Thread t = new Thread(new BankHandler(bank, s));
             t.start();
         }
     }
 
     private static class BankHandler implements Runnable {
 
-        private Socket socket;
         private DataOutputStream out;
         private DataInputStream in;
         private bank.Bank bank;
+        private Socket socket;
 
-        public BankHandler(Socket socket) {
+        public BankHandler(bank.Bank bank, Socket socket) {
             this.socket = socket;
-            this.bank = new bank.local.Driver.Bank();
+            this.bank = bank;
         }
 
         @Override
@@ -41,17 +48,52 @@ public class BankServer {
             while(true) {
                 try {
                     this.in = new DataInputStream(socket.getInputStream());
-                    this.out = new DataOutputStream(socket.getOutputStream());
+                    this.out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
                     String arg = in.readUTF();
+                    System.out.println("[Server]Command: " + arg);
+                    // arg: "createOwner:<owner>"
                     switch(arg) {
+                        // ------------------------------------------------------------------
                         case "createAccount" :
                             String owner = in.readUTF();
                             String id = bank.createAccount(owner);
+                            System.out.println("[Server]createAccount: " + owner);
+                            System.out.println("[Server]id : " + id);
                             this.out.writeUTF("" + id);
+                            this.out.flush();
                             break;
+                        // ------------------------------------------------------------------
+                        case "transfer":
+                            ObjectInputStream accountInputStream = new ObjectInputStream(in);
+                            try {
+                                bank.Account from = (bank.Account)accountInputStream.readObject();
+                                bank.Account to   = (bank.Account)accountInputStream.readObject();
+                                Double amount = in.readDouble();
+                                try {
+                                    bank.transfer(from, to, amount);
+                                } catch (InactiveException e) {
+                                    e.printStackTrace();
+                                } catch (OverdrawException e) {
+                                    e.printStackTrace();
+                                }
+                            } catch (ClassNotFoundException c) {
+                                throw new ClassNotFoundException();
+                            }
+                            break;
+                        // ------------------------------------------------------------------
+                        case "getAccountNumbers" :
+                            System.out.println("[Server]Get Account Numbers.");
+                            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+                            out.writeObject(bank.getAccountNumbers());
+                            break;
+                        // ------------------------------------------------------------------
+                        default:
+                            System.out.println("No instruction");
+                        // ------------------------------------------------------------------
                     }
-                } catch (IOException e) {
+                } catch (IOException | ClassNotFoundException e) {
                     e.printStackTrace();
+                    break;
                 }
             }
         }

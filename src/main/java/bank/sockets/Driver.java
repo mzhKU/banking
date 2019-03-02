@@ -31,6 +31,8 @@ public class Driver implements bank.BankDriver {
         System.out.println("connecting to " + host + ":" + port);
         System.out.println("connected to " + s.getRemoteSocketAddress());
 
+        // BufferedStream(InputStream): Bytes
+        // DataStream                 : binary
         in = new DataInputStream(new BufferedInputStream(s.getInputStream()));
         out = new DataOutputStream(new BufferedOutputStream(s.getOutputStream()));
 
@@ -49,8 +51,14 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public String createAccount(String owner) throws IOException {
-            out.writeUTF("createAccount:" + owner);
-            return owner;
+            //out.writeUTF("createAccount:" + owner);
+            out.writeUTF("createAccount");
+            out.flush();
+            out.writeUTF(owner);
+            out.flush();
+            String createdAccountNumber = in.readUTF();
+            System.out.println("[Client]Created Account Number: " + createdAccountNumber);
+            return createdAccountNumber;
         }
 
         @Override
@@ -60,17 +68,50 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public Set<String> getAccountNumbers() throws IOException {
-            return new TreeSet<String>();
+            out.writeUTF("getAccountNumbers");
+            out.flush();
+
+            ObjectInputStream in = new ObjectInputStream(s.getInputStream());
+            Set<String> accountNumbers = null;
+            try {
+                accountNumbers = (Set<String>)in.readObject();
+                System.out.println("[Client]Account numbers received: " + accountNumbers);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            return accountNumbers;
         }
 
         @Override
         public Account getAccount(String number) throws IOException {
-            return null;
+            out.writeUTF(number);
+            out.flush();
+            ObjectInputStream accountInputStream = new ObjectInputStream(s.getInputStream());
+            Account accountProxy = null;
+            try {
+                accountProxy = (Account)accountInputStream.readObject();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            finally {
+                return accountProxy;
+            }
         }
 
         @Override
         public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, OverdrawException, InactiveException {
+            out.writeUTF("transfer");
+            out.flush();
 
+            ObjectOutputStream accountOutputStream = new ObjectOutputStream(new BufferedOutputStream(out));
+            accountOutputStream.writeObject(a);
+            accountOutputStream.flush();
+            accountOutputStream.writeObject(b);
+            accountOutputStream.flush();
+
+            out.writeDouble(amount);
+            out.flush();
         }
     }
 
