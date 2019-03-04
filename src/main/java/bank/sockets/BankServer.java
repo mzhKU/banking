@@ -72,6 +72,7 @@ public class BankServer {
 
                             try {
                                 bank.transfer(from, to, amount);
+                                this.out.writeBoolean(true);
                             } catch (InactiveException e) {
                                 System.out.println("[Server]Inactive exception raised");
                                 this.out.writeBoolean(false);
@@ -84,7 +85,8 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                         case "getBalance" :
-                            out.writeDouble(bank.getAccount(new DataInputStream(socket.getInputStream()).readUTF()).getBalance());
+                            String getBalanceFrom = new DataInputStream(socket.getInputStream()).readUTF();
+                            out.writeDouble(bank.getAccount(getBalanceFrom).getBalance());
                             out.flush();
                             break;
                         // ------------------------------------------------------------------

@@ -191,16 +191,16 @@ public class Driver implements bank.BankDriver {
             out.flush();
 
             // Both accounts are active -> read 'true' from stream.
-            if(!in.readBoolean()) {
-                System.out.println("[Client]Inactive");
-                throw new InactiveException();
-            } else {
+            if(in.readBoolean()) {
                 out.writeUTF(a.getNumber());
                 out.flush();
                 out.writeUTF(b.getNumber());
                 out.flush();
                 out.writeDouble(amount);
                 out.flush();
+            } else {
+                System.out.println("[Client]Inactive");
+                throw new InactiveException();
             }
         }
     }
