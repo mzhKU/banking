@@ -39,6 +39,82 @@ public class Driver implements bank.BankDriver {
         bank = new SocketBank();
     }
 
+    class SocketAccount implements bank.Account {
+        private final String number;
+        private final String owner;
+        private double balance;
+
+        public SocketAccount(String number, String owner) {
+            this.number = number;
+            this.owner = owner;
+        }
+
+        @Override
+        public String getNumber() throws IOException {
+            return number;
+        }
+
+        @Override
+        public String getOwner() throws IOException {
+            return owner;
+        }
+
+        @Override
+        public boolean isActive() throws IOException {
+            out.writeUTF("active");
+            out.flush();
+            out.writeUTF(number);
+            out.flush();
+            return in.readBoolean();
+        }
+
+        @Override
+        public void deposit(double amount) throws IOException, IllegalArgumentException, InactiveException {
+            if(!this.isActive()) {
+                throw new InactiveException("Account inactive");
+            }
+            if(amount < 0.0) {
+                throw new IllegalArgumentException("Deposited amount must be positive.");
+            } else {
+                out.writeUTF("deposit");
+                out.flush();
+                out.writeDouble(amount);
+                out.flush();
+                out.writeUTF(this.getNumber());
+                out.flush();
+                this.balance += amount;
+            }
+        }
+
+        @Override
+        public void withdraw(double amount) throws IOException, IllegalArgumentException, OverdrawException, InactiveException {
+            if(!this.isActive()) {
+                throw new InactiveException("Account inactive");
+            }
+            if(amount > this.balance) {
+                throw new IllegalArgumentException("Balance too low.");
+            } else {
+                out.writeUTF("withdraw");
+                out.flush();
+                out.writeDouble(amount);
+                out.flush();
+                out.writeUTF(this.getNumber());
+                out.flush();
+                this.balance -= amount;
+            }
+        }
+
+        @Override
+        public double getBalance() throws IOException {
+            out.writeUTF("getBalance");
+            out.flush();
+            out.writeUTF(this.getNumber());
+            out.flush();
+            this.balance = in.readDouble();
+            return this.balance;
+        }
+    }
+
     @Override
     public Bank getBank() {
         return bank;
@@ -100,31 +176,32 @@ public class Driver implements bank.BankDriver {
             DataInputStream accountInputStream = new DataInputStream(s.getInputStream());
 
             String accountOwner = accountInputStream.readUTF();
-            String numberIn  = accountInputStream.readUTF();
 
-            // Return a proxy
-            return new bank.local.Driver.Account(accountOwner, numberIn);
+            if(accountOwner != null) {
+                // Return a proxy
+                return new SocketAccount(accountOwner, number);
+            } else {
+                return null;
+            }
         }
 
         @Override
-        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException {
+        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, InactiveException {
             out.writeUTF("transfer");
             out.flush();
 
-            out.writeUTF(a.getNumber());
-            out.flush();
-            out.writeUTF(b.getNumber());
-            out.flush();
-
-            /*
-            accountOutputStream.writeObject(a);
-            accountOutputStream.flush();
-            accountOutputStream.writeObject(b);
-            accountOutputStream.flush();
-            */
-
-            out.writeDouble(amount);
-            out.flush();
+            // Both accounts are active -> read 'true' from stream.
+            if(!in.readBoolean()) {
+                System.out.println("[Client]Inactive");
+                throw new InactiveException();
+            } else {
+                out.writeUTF(a.getNumber());
+                out.flush();
+                out.writeUTF(b.getNumber());
+                out.flush();
+                out.writeDouble(amount);
+                out.flush();
+            }
         }
     }
 

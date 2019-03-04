@@ -128,14 +128,13 @@ public static class Account implements bank.Account {
 		}
 
 		@Override
-		public void deposit(double amount) throws InactiveException {
+		public void deposit(double amount) throws InactiveException, IllegalArgumentException {
 		    if(!this.isActive()) {
 		        throw new InactiveException("Account inactive");
             }
             if(amount < 0.0) {
                 throw new IllegalArgumentException("Deposited amount should be positive");
-            }
-            else {
+            } else {
                 this.balance += amount;
             }
 		}

@@ -11,6 +11,7 @@ import java.net.Socket;
 public class BankServer {
 
     private static bank.Bank bank = new bank.local.Driver.Bank();
+    // private static bank.Bank bank = new bank.sockets.Driver().getBank();
 
     // ClassNotFoundException: if readObject() doesn't return the object type expected
     public static void main(String args[]) throws IOException {
@@ -47,14 +48,11 @@ public class BankServer {
             while(true) {
                 try {
                     this.in = new DataInputStream(socket.getInputStream());
-                    //this.out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
                     this.out = new DataOutputStream(socket.getOutputStream());
                     String arg = in.readUTF();
-                    // System.out.println("[Server]Command: " + arg);
-                    // arg: "createOwner:<owner>"
-                    switch(arg) {
+                    switch (arg) {
                         // ------------------------------------------------------------------
-                        case "createAccount" :
+                        case "createAccount":
                             String owner = in.readUTF();
                             System.out.println("[Server]createAccount: " + owner);
 
@@ -66,25 +64,55 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                         case "transfer":
-                            // ObjectInputStream accountInputStream = new ObjectInputStream(in);
                             DataInputStream transferStream = new DataInputStream(in);
-                            // bank.Account from = (bank.Account)accountInputStream.readObject();
-                            // bank.Account to   = (bank.Account)accountInputStream.readObject();
 
-                            bank.Account from = bank.getAccount(transferStream.readUTF());
-                            bank.Account to   = bank.getAccount(transferStream.readUTF());
-
+                            Account from = bank.getAccount(transferStream.readUTF());
+                            Account to = bank.getAccount(transferStream.readUTF());
                             Double amount = in.readDouble();
-                            System.out.println("from.isActive: " + from.isActive() + ", to.isActive: " + to.isActive());
-                            bank.transfer(from, to, amount);
+
+                            try {
+                                bank.transfer(from, to, amount);
+                            } catch (InactiveException e) {
+                                System.out.println("[Server]Inactive exception raised");
+                                this.out.writeBoolean(false);
+                            }
                             break;
                         // ------------------------------------------------------------------
-                        case "getAccount" :
+                        case "active" :
+                            out.writeBoolean(bank.getAccount(in.readUTF()).isActive());
+                            out.flush();
+                            break;
+                        // ------------------------------------------------------------------
+                        case "getBalance" :
+                            out.writeDouble(bank.getAccount(new DataInputStream(socket.getInputStream()).readUTF()).getBalance());
+                            out.flush();
+                            break;
+                        // ------------------------------------------------------------------
+                        case "deposit" :
+                            double amountToDeposit = new DataInputStream(socket.getInputStream()).readDouble();
+                            String a = new DataInputStream(socket.getInputStream()).readUTF();
+                            try {
+                                bank.getAccount(a).deposit(amountToDeposit);
+                            } catch (InactiveException e) {
+                                System.out.println("Account inactive");
+                                this.out.writeBoolean(false);
+                            }
+                        case "withdraw" :
+                            double toWithdraw = new DataInputStream(socket.getInputStream()).readDouble();
+                            String b = new DataInputStream(socket.getInputStream()).readUTF();
+                            try {
+                                bank.getAccount(b).withdraw(toWithdraw);
+                            } catch (InactiveException e) {
+                                System.out.println("Account inactive");
+                                this.out.writeBoolean(false);
+                            }
+                        // ------------------------------------------------------------------
+                        case "getAccount":
                             System.out.println("[Server]Get account.");
                             // ObjectOutputStream accountOutputStream = new ObjectOutputStream(socket.getOutputStream());
                             //accountOutputStream.writeObject(bank.getAccount(in.readUTF()));
                             DataOutputStream accountStream = new DataOutputStream(socket.getOutputStream());
-                            DataInputStream in  = new DataInputStream(socket.getInputStream());
+                            DataInputStream in = new DataInputStream(socket.getInputStream());
                             String accountToGet = in.readUTF();
                             System.out.println("[Server]Account number: " + accountToGet);
                             System.out.println("[Server]Bank account: " + bank.getAccount(accountToGet));
@@ -94,21 +122,18 @@ public class BankServer {
 
                             accountStream.writeUTF(bank.getAccount(accountToGet).getNumber());
                             accountStream.flush();
-
-                            accountStream.writeUTF(bank.getAccount(accountToGet).getNumber());
-                            accountStream.flush();
                             break;
                         // ------------------------------------------------------------------
-                        case "getAccountNumbers" :
+                        case "getAccountNumbers":
                             System.out.println("[Server]Get account numbers.");
                             ObjectOutputStream accountNumbersOutputStream = new ObjectOutputStream(socket.getOutputStream());
                             accountNumbersOutputStream.writeObject(bank.getAccountNumbers());
                             break;
                         // ------------------------------------------------------------------
-                        case "closeAccount" :
+                        case "closeAccount":
                             System.out.println("[Server]Close account.");
                             String closeAccount = this.in.readUTF();
-                            if(bank.getAccount(closeAccount).isActive()) {
+                            if (bank.getAccount(closeAccount).isActive()) {
                                 bank.closeAccount(closeAccount);
                                 out.writeBoolean(true);
                             } else {
@@ -125,8 +150,6 @@ public class BankServer {
                     e.printStackTrace();
                     break;
                 } catch (OverdrawException e) {
-                    e.printStackTrace();
-                } catch (InactiveException e) {
                     e.printStackTrace();
                 }
             }
