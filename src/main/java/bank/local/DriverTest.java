@@ -18,7 +18,7 @@ public class DriverTest {
 
     @BeforeEach
     void setup() {
-        this.account = new Driver.Account("1");
+        this.account = new Driver.Account("1", "1");
         this.bank = new Driver.Bank();
     }
 
@@ -29,7 +29,7 @@ public class DriverTest {
 
     @Test
     void testGetInexistingAccount() {
-        Driver.Account accountOne = new Driver.Account("Thomas");
+        Driver.Account accountOne = new Driver.Account("Thomas", "1");
         this.bank.createAccount("Thomas");
         // When
         try {
@@ -45,7 +45,7 @@ public class DriverTest {
     @Test
     void testDepositNegativeAmount() {
 
-        Driver.Account accountOne = new Driver.Account("Thomas");
+        Driver.Account accountOne = new Driver.Account("Thomas", "1");
         this.bank.createAccount("Thomas");
 
         try {
@@ -60,7 +60,7 @@ public class DriverTest {
 
     @Test
     void testOverdraw() {
-        Driver.Account accountOne = new Driver.Account("Thomas");
+        Driver.Account accountOne = new Driver.Account("Thomas", "1");
         this.bank.createAccount("Thomas");
 
         try {
@@ -75,8 +75,8 @@ public class DriverTest {
 
     @Test
     void testAddAccountWithSameAccountNumberTwice() {
-        Driver.Account accountOne = new Driver.Account("Thomas");
-        Driver.Account accountTwo = new Driver.Account("Michael");
+        Driver.Account accountOne = new Driver.Account("Thomas", "1");
+        Driver.Account accountTwo = new Driver.Account("Michael", "1");
 
         // When
         try {
@@ -98,7 +98,7 @@ public class DriverTest {
     void testCloseAccount() {
         // given
         Driver.Bank newBank = new Driver.Bank();
-        Driver.Account accountToClose = new Driver.Account("10");
+        Driver.Account accountToClose = new Driver.Account("10", "1");
 
         // when
         newBank.createAccount("Thomas");

@@ -53,7 +53,7 @@ public class Driver implements bank.BankDriver {
 		@Override
 		public String createAccount(String owner) {
 		    String accountNumber = Integer.toString(accounts.size() + 1);
-		    this.accounts.put(accountNumber, new Account(owner));
+		    this.accounts.put(accountNumber, new Account(owner, accountNumber));
 			return accountNumber;
 		}
 
@@ -96,14 +96,15 @@ public class Driver implements bank.BankDriver {
 		}
 	}
 
-	static class Account implements bank.Account, java.io.Serializable {
+public static class Account implements bank.Account {
 		private String number;
 		private String owner;
 		private double balance;
 		private boolean active = true;
 
-		Account(String owner) {
+		public Account(String owner, String number) {
 			this.owner = owner;
+		    this.number = number;
 		}
 
 		@Override

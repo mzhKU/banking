@@ -51,6 +51,7 @@ public class Driver implements bank.BankDriver {
             //out.writeUTF("createAccount:" + owner);
             out.writeUTF("createAccount");
             out.flush();
+            System.out.println("[Client]New owner: " + owner);
             out.writeUTF(owner);
             out.flush();
             String createdAccountNumber = in.readUTF();
@@ -96,16 +97,13 @@ public class Driver implements bank.BankDriver {
             out.flush();
             out.writeUTF(number);
             out.flush();
-            ObjectInputStream accountInputStream = new ObjectInputStream(s.getInputStream());
-            Account accountProxy = null;
-            try {
-                accountProxy = (Account)accountInputStream.readObject();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-            finally {
-                return accountProxy;
-            }
+            DataInputStream accountInputStream = new DataInputStream(s.getInputStream());
+
+            String accountOwner = accountInputStream.readUTF();
+            String numberIn  = accountInputStream.readUTF();
+
+            // Return a proxy
+            return new bank.local.Driver.Account(accountOwner, numberIn);
         }
 
         @Override
@@ -113,11 +111,17 @@ public class Driver implements bank.BankDriver {
             out.writeUTF("transfer");
             out.flush();
 
-            ObjectOutputStream accountOutputStream = new ObjectOutputStream(new BufferedOutputStream(out));
+            out.writeUTF(a.getNumber());
+            out.flush();
+            out.writeUTF(b.getNumber());
+            out.flush();
+
+            /*
             accountOutputStream.writeObject(a);
             accountOutputStream.flush();
             accountOutputStream.writeObject(b);
             accountOutputStream.flush();
+            */
 
             out.writeDouble(amount);
             out.flush();
