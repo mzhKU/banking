@@ -52,6 +52,7 @@ public class Driver implements bank.BankDriver {
 
 		@Override
 		public String createAccount(String owner) {
+			System.out.println("[local.bank:createAccount]Owner: " + owner);
 		    String accountNumber = Integer.toString(accounts.size() + 1);
 		    this.accounts.put(accountNumber, new Account(owner, accountNumber));
 			return accountNumber;

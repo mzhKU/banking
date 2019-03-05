@@ -44,7 +44,7 @@ public class Driver implements bank.BankDriver {
         private final String owner;
         private double balance;
 
-        public SocketAccount(String number, String owner) {
+        public SocketAccount(String owner, String number) {
             this.number = number;
             this.owner = owner;
         }
@@ -80,7 +80,7 @@ public class Driver implements bank.BankDriver {
                 out.flush();
                 out.writeDouble(amount);
                 out.flush();
-                out.writeUTF(this.getNumber());
+                out.writeUTF(number);
                 out.flush();
                 this.balance += amount;
             }
@@ -124,14 +124,16 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public String createAccount(String owner) throws IOException {
-            //out.writeUTF("createAccount:" + owner);
             out.writeUTF("createAccount");
             out.flush();
-            System.out.println("[Client]New owner: " + owner);
             out.writeUTF(owner);
             out.flush();
+
             String createdAccountNumber = in.readUTF();
-            System.out.println("[Client]Created Account Number: " + createdAccountNumber);
+
+            System.out.println("[Client:createAccount]Owner: " + owner);
+            System.out.println("[Client:createAccount]Number: " + createdAccountNumber);
+
             return createdAccountNumber;
         }
 
@@ -171,13 +173,16 @@ public class Driver implements bank.BankDriver {
         public Account getAccount(String number) throws IOException {
             out.writeUTF("getAccount");
             out.flush();
+            System.out.println("[Client:socketBank:getAccount]Number: " + number);
             out.writeUTF(number);
             out.flush();
             DataInputStream accountInputStream = new DataInputStream(s.getInputStream());
 
-            String accountOwner = accountInputStream.readUTF();
+            String accountNumber = accountInputStream.readUTF();
+            String accountOwner  = accountInputStream.readUTF();
+            System.out.println("[Client:socketBank:getAccount]Received number: " + accountNumber);
 
-            if(accountOwner != null) {
+            if(accountNumber != null) {
                 // Return a proxy
                 return new SocketAccount(accountOwner, number);
             } else {

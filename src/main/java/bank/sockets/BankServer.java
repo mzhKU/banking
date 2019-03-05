@@ -54,13 +54,15 @@ public class BankServer {
                         // ------------------------------------------------------------------
                         case "createAccount":
                             String owner = in.readUTF();
-                            System.out.println("[Server]createAccount: " + owner);
+                            System.out.println("[Server:createAccount]Owner: " + owner);
 
                             String id = bank.createAccount(owner);
-                            System.out.println("[Server]id: " + id);
+                            System.out.println("[Server:createAccount]Id: " + id);
 
-                            this.out.writeUTF("" + id);
-                            this.out.flush();
+                            out.writeUTF("" + id);
+                            out.flush();
+                            out.writeUTF(owner);
+                            out.flush();
                             break;
                         // ------------------------------------------------------------------
                         case "transfer":
@@ -79,14 +81,16 @@ public class BankServer {
                                 bank.transfer(from, to, amount);
                                 out.writeUTF("ok");
                             } catch (InactiveException e) {
-                                System.out.println("[Server]Inactive exception raised");
+                                System.out.println("[Server:transfer]Inactive exception");
                                 // this.out.writeBoolean(false);
                                 out.writeUTF("inactive");
                                 out.flush();
                             } catch (OverdrawException o) {
+                                System.out.println("[Server:transfer]Overdraw exception");
                                 out.writeUTF("overdraw");
                                 out.flush();
                             } catch (IllegalArgumentException i) {
+                                System.out.println("[Server:transfer]Illegal argument");
                                 out.writeUTF("illegal");
                                 out.flush();
                             }
@@ -99,6 +103,8 @@ public class BankServer {
                         // ------------------------------------------------------------------
                         case "getBalance" :
                             String getBalanceFrom = new DataInputStream(socket.getInputStream()).readUTF();
+                            System.out.println("[Server:getBalance]getBalanceFrom: " + getBalanceFrom);
+                            System.out.println("[Server:getBalance]Balance: " + bank.getAccount(getBalanceFrom).getBalance());
                             out.writeDouble(bank.getAccount(getBalanceFrom).getBalance());
                             out.flush();
                             break;
@@ -123,20 +129,19 @@ public class BankServer {
                             }
                         // ------------------------------------------------------------------
                         case "getAccount":
-                            System.out.println("[Server]Get account.");
-                            // ObjectOutputStream accountOutputStream = new ObjectOutputStream(socket.getOutputStream());
-                            //accountOutputStream.writeObject(bank.getAccount(in.readUTF()));
                             DataOutputStream accountStream = new DataOutputStream(socket.getOutputStream());
+
                             DataInputStream in = new DataInputStream(socket.getInputStream());
-                            String accountToGet = in.readUTF();
-                            System.out.println("[Server]Account number: " + accountToGet);
-                            System.out.println("[Server]Bank account: " + bank.getAccount(accountToGet));
+                            String accountNumber = in.readUTF();
 
-                            accountStream.writeUTF(bank.getAccount(accountToGet).getOwner());
+                            System.out.println("[Server:getAccount]Account number: " + accountNumber);
+                            System.out.println("[Server:getAccount]Bank account: " + bank.getAccount(accountNumber));
+
+                            accountStream.writeUTF(bank.getAccount(accountNumber).getNumber());
+                            accountStream.flush();
+                            accountStream.writeUTF(bank.getAccount(accountNumber).getOwner());
                             accountStream.flush();
 
-                            accountStream.writeUTF(bank.getAccount(accountToGet).getNumber());
-                            accountStream.flush();
                             break;
                         // ------------------------------------------------------------------
                         case "getAccountNumbers":
