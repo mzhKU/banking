@@ -70,12 +70,25 @@ public class BankServer {
                             Account to = bank.getAccount(transferStream.readUTF());
                             Double amount = in.readDouble();
 
+                            if(!from.isActive() || !to.isActive()) {
+                                out.writeUTF("inactive");
+                                out.flush();
+                            }
+
                             try {
                                 bank.transfer(from, to, amount);
-                                this.out.writeBoolean(true);
+                                out.writeUTF("ok");
                             } catch (InactiveException e) {
                                 System.out.println("[Server]Inactive exception raised");
-                                this.out.writeBoolean(false);
+                                // this.out.writeBoolean(false);
+                                out.writeUTF("inactive");
+                                out.flush();
+                            } catch (OverdrawException o) {
+                                out.writeUTF("overdraw");
+                                out.flush();
+                            } catch (IllegalArgumentException i) {
+                                out.writeUTF("illegal");
+                                out.flush();
                             }
                             break;
                         // ------------------------------------------------------------------

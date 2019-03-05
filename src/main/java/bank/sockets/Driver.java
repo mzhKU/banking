@@ -186,21 +186,31 @@ public class Driver implements bank.BankDriver {
         }
 
         @Override
-        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, InactiveException {
+        public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, InactiveException, OverdrawException {
             out.writeUTF("transfer");
             out.flush();
 
-            // Both accounts are active -> read 'true' from stream.
-            if(in.readBoolean()) {
+            String serverStatus = in.readUTF();
+
+            if(serverStatus.equals("ok")) {
                 out.writeUTF(a.getNumber());
                 out.flush();
                 out.writeUTF(b.getNumber());
                 out.flush();
                 out.writeDouble(amount);
                 out.flush();
-            } else {
+            }
+            if(serverStatus.equals("inactive")) {
                 System.out.println("[Client]Inactive");
                 throw new InactiveException();
+            }
+            if(serverStatus.equals("overdraw")) {
+                System.out.println("[Client]Overdraw");
+                throw new OverdrawException();
+            }
+            if(serverStatus.equals("illegal")) {
+                System.out.println("[Client]Illegal");
+                throw new IllegalArgumentException();
             }
         }
     }
