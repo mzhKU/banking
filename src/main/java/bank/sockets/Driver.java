@@ -78,11 +78,10 @@ public class Driver implements bank.BankDriver {
             } else {
                 out.writeUTF("deposit");
                 out.flush();
-                out.writeDouble(amount);
-                out.flush();
                 out.writeUTF(number);
                 out.flush();
-                this.balance += amount;
+                out.writeDouble(amount);
+                out.flush();
             }
         }
 
@@ -96,11 +95,10 @@ public class Driver implements bank.BankDriver {
             } else {
                 out.writeUTF("withdraw");
                 out.flush();
+                out.writeUTF(number);
+                out.flush();
                 out.writeDouble(amount);
                 out.flush();
-                out.writeUTF(this.getNumber());
-                out.flush();
-                this.balance -= amount;
             }
         }
 

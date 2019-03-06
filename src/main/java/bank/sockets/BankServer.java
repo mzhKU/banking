@@ -47,8 +47,8 @@ public class BankServer {
         public void run() {
             while(true) {
                 try {
-                    this.in = new DataInputStream(socket.getInputStream());
-                    this.out = new DataOutputStream(socket.getOutputStream());
+                    out = new DataOutputStream(socket.getOutputStream());
+                    in  = new DataInputStream(  socket.getInputStream());
                     String arg = in.readUTF();
                     switch (arg) {
                         // ------------------------------------------------------------------
@@ -61,15 +61,25 @@ public class BankServer {
 
                             out.writeUTF("" + id);
                             out.flush();
-                            out.writeUTF(owner);
+                            // out.writeUTF(owner);
+                            // out.flush();
+                            break;
+                        // ------------------------------------------------------------------
+                        case "getAccount":
+                            String accountNumber = in.readUTF();
+                            System.out.println("[Server:getAccount]Account number: " + accountNumber);
+                            System.out.println("[Server:getAccount]Bank account: " + bank.getAccount(accountNumber));
+
+                            out.writeUTF(bank.getAccount(accountNumber).getNumber());
                             out.flush();
+                            out.writeUTF(bank.getAccount(accountNumber).getOwner());
+                            out.flush();
+
                             break;
                         // ------------------------------------------------------------------
                         case "transfer":
-                            DataInputStream transferStream = new DataInputStream(in);
-
-                            Account from = bank.getAccount(transferStream.readUTF());
-                            Account to = bank.getAccount(transferStream.readUTF());
+                            Account from = bank.getAccount(in.readUTF());
+                            Account to = bank.getAccount(in.readUTF());
                             Double amount = in.readDouble();
 
                             if(!from.isActive() || !to.isActive()) {
@@ -110,38 +120,20 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                         case "deposit" :
-                            double amountToDeposit = new DataInputStream(socket.getInputStream()).readDouble();
-                            String a = new DataInputStream(socket.getInputStream()).readUTF();
                             try {
-                                bank.getAccount(a).deposit(amountToDeposit);
+                                bank.getAccount(in.readUTF()).deposit(in.readDouble());
                             } catch (InactiveException e) {
                                 System.out.println("Account inactive");
-                                this.out.writeBoolean(false);
+                                // this.out.writeBoolean(false);
                             }
+                            break;
                         case "withdraw" :
-                            double toWithdraw = new DataInputStream(socket.getInputStream()).readDouble();
-                            String b = new DataInputStream(socket.getInputStream()).readUTF();
                             try {
-                                bank.getAccount(b).withdraw(toWithdraw);
+                                bank.getAccount(in.readUTF()).withdraw(in.readDouble());
                             } catch (InactiveException e) {
                                 System.out.println("Account inactive");
-                                this.out.writeBoolean(false);
+                                // this.out.writeBoolean(false);
                             }
-                        // ------------------------------------------------------------------
-                        case "getAccount":
-                            DataOutputStream accountStream = new DataOutputStream(socket.getOutputStream());
-
-                            DataInputStream in = new DataInputStream(socket.getInputStream());
-                            String accountNumber = in.readUTF();
-
-                            System.out.println("[Server:getAccount]Account number: " + accountNumber);
-                            System.out.println("[Server:getAccount]Bank account: " + bank.getAccount(accountNumber));
-
-                            accountStream.writeUTF(bank.getAccount(accountNumber).getNumber());
-                            accountStream.flush();
-                            accountStream.writeUTF(bank.getAccount(accountNumber).getOwner());
-                            accountStream.flush();
-
                             break;
                         // ------------------------------------------------------------------
                         case "getAccountNumbers":
