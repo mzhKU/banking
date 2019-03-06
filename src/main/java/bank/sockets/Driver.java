@@ -74,7 +74,7 @@ public class Driver implements bank.BankDriver {
                 throw new InactiveException("Account inactive");
             }
             if(amount < 0.0) {
-                throw new IllegalArgumentException("Deposited amount must be positive.");
+                throw new IllegalArgumentException("Dont withdraw negative amounts");
             } else {
                 out.writeUTF("deposit");
                 out.flush();
@@ -92,6 +92,9 @@ public class Driver implements bank.BankDriver {
             }
             if(amount > this.balance) {
                 throw new IllegalArgumentException("Balance too low.");
+            }
+            if(amount < 0.0) {
+                    throw new IllegalArgumentException("Dont withdraw negative amounts");
             } else {
                 out.writeUTF("withdraw");
                 out.flush();
@@ -192,17 +195,15 @@ public class Driver implements bank.BankDriver {
         public void transfer(Account a, Account b, double amount) throws IOException, IllegalArgumentException, InactiveException, OverdrawException {
             out.writeUTF("transfer");
             out.flush();
+            out.writeUTF(a.getNumber());
+            out.flush();
+            out.writeUTF(b.getNumber());
+            out.flush();
+            out.writeDouble(amount);
+            out.flush();
 
             String serverStatus = in.readUTF();
 
-            if(serverStatus.equals("ok")) {
-                out.writeUTF(a.getNumber());
-                out.flush();
-                out.writeUTF(b.getNumber());
-                out.flush();
-                out.writeDouble(amount);
-                out.flush();
-            }
             if(serverStatus.equals("inactive")) {
                 System.out.println("[Client]Inactive");
                 throw new InactiveException();

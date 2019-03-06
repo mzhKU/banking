@@ -50,6 +50,7 @@ public class BankServer {
                     out = new DataOutputStream(socket.getOutputStream());
                     in  = new DataInputStream(  socket.getInputStream());
                     String arg = in.readUTF();
+                    System.out.println("[Server:try]arg: " + arg);
                     switch (arg) {
                         // ------------------------------------------------------------------
                         case "createAccount":
@@ -82,27 +83,40 @@ public class BankServer {
                             Account to = bank.getAccount(in.readUTF());
                             Double amount = in.readDouble();
 
+                            System.out.println("[Server:transfer]From: " + from);
+                            System.out.println("[Server:transfer]to: " + to);
+
                             if(!from.isActive() || !to.isActive()) {
                                 out.writeUTF("inactive");
                                 out.flush();
+                                break;
                             }
-
-                            try {
-                                bank.transfer(from, to, amount);
-                                out.writeUTF("ok");
-                            } catch (InactiveException e) {
-                                System.out.println("[Server:transfer]Inactive exception");
-                                // this.out.writeBoolean(false);
-                                out.writeUTF("inactive");
-                                out.flush();
-                            } catch (OverdrawException o) {
-                                System.out.println("[Server:transfer]Overdraw exception");
-                                out.writeUTF("overdraw");
-                                out.flush();
-                            } catch (IllegalArgumentException i) {
-                                System.out.println("[Server:transfer]Illegal argument");
-                                out.writeUTF("illegal");
-                                out.flush();
+                            if(amount < 0.0) {
+                                throw new IllegalArgumentException();
+                            }
+                            if(from.getBalance() < amount) {
+                                throw new OverdrawException();
+                            } else {
+                                try {
+                                    bank.transfer(from, to, amount);
+                                    out.writeUTF("ok");
+                                    out.flush();
+                                } catch (InactiveException e) {
+                                    System.out.println("[Server:transfer]Inactive exception");
+                                    // this.out.writeBoolean(false);
+                                    out.writeUTF("inactive");
+                                    out.flush();
+                                } catch (OverdrawException o) {
+                                    System.out.println("[Server:transfer]Overdraw exception");
+                                    out.writeUTF("overdraw");
+                                    out.flush();
+                                } catch (IllegalArgumentException i) {
+                                    System.out.println("[Server:transfer]Illegal argument");
+                                    System.out.println("[Server:transfer]from.balance: " + from.getBalance());
+                                    System.out.println("[Server:transfer]amount: " + amount);
+                                    out.writeUTF("illegal");
+                                    out.flush();
+                                }
                             }
                             break;
                         // ------------------------------------------------------------------
