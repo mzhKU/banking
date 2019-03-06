@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -55,25 +54,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="94" />
+          <entry key="java" value="95" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="94" />
+          <entry key="JAVA" value="95" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="37659" />
+          <entry key="java" value="37811" />
           <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="37659" />
+          <entry key="JAVA" value="37811" />
           <entry key="PLAIN_TEXT" value="111" />
         </counts>
       </usages-collector>
@@ -86,11 +85,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.44437614">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="192">
-                  <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+                <state relative-caret-position="178">
+                  <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#3662#3663#0" expanded="true" />
@@ -100,7 +99,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="228">
@@ -117,14 +116,23 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="96" selection-start-line="96" selection-end-line="96" />
+                <state relative-caret-position="324">
+                  <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
                 </state>
               </provider>
             </entry>
@@ -506,6 +514,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -556,6 +565,16 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bank" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bank-assignment-01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bank-assignment-01" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bank" type="462c0819:PsiDirectoryNode" />
               <item name="local" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -578,7 +597,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -734,7 +752,7 @@
       <workItem from="1551683920904" duration="11597000" />
       <workItem from="1551723221701" duration="9679000" />
       <workItem from="1551812429981" duration="5155000" />
-      <workItem from="1551852737403" duration="4601000" />
+      <workItem from="1551852737403" duration="6231000" />
     </task>
     <servers />
   </component>
@@ -771,10 +789,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103316000" />
+    <option name="totallyTimeSpent" value="104946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="-4" width="1873" height="1084" extended-state="6" />
+    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -782,18 +800,18 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.50127226" side_tool="true" weight="0.1419989" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49695122" weight="0.12182448" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49695122" visible="true" weight="0.12140575" />
       <window_info id="Structure" order="6" sideWeight="0.5030488" side_tool="true" weight="0.2904157" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.31846473" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49153468" weight="0.29460582" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4909478" weight="0.29460582" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5034602" side_tool="true" weight="0.2991453" />
       <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49307775" weight="0.32780084" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.48989624" visible="true" weight="0.24585062" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.51010376" side_tool="true" visible="true" weight="0.24585062" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.48935038" visible="true" weight="0.24585062" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.5106496" side_tool="true" visible="true" weight="0.24585062" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -922,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4335">
@@ -1025,18 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3662#3663#0" expanded="true" />
-            <element signature="e#3689#3690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1048,13 +1047,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="324">
+          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
         </state>
       </provider>
     </entry>

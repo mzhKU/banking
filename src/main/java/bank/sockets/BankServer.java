@@ -92,30 +92,26 @@ public class BankServer {
                                 break;
                             }
                             if(amount < 0.0) {
-                                throw new IllegalArgumentException();
+                                out.writeUTF("illegal");
+                                out.flush();
+                                break;
                             }
                             if(from.getBalance() < amount) {
-                                throw new OverdrawException();
+                                out.writeUTF("overdraw");
+                                out.flush();
+                                break;
                             } else {
                                 try {
                                     bank.transfer(from, to, amount);
-                                    out.writeUTF("ok");
-                                    out.flush();
                                 } catch (InactiveException e) {
                                     System.out.println("[Server:transfer]Inactive exception");
                                     // this.out.writeBoolean(false);
-                                    out.writeUTF("inactive");
-                                    out.flush();
                                 } catch (OverdrawException o) {
                                     System.out.println("[Server:transfer]Overdraw exception");
-                                    out.writeUTF("overdraw");
-                                    out.flush();
                                 } catch (IllegalArgumentException i) {
                                     System.out.println("[Server:transfer]Illegal argument");
                                     System.out.println("[Server:transfer]from.balance: " + from.getBalance());
                                     System.out.println("[Server:transfer]amount: " + amount);
-                                    out.writeUTF("illegal");
-                                    out.flush();
                                 }
                             }
                             break;
