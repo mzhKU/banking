@@ -150,12 +150,19 @@ public class BankServer {
                                 out.flush();
                             }
                             break;
+                        // ------------------------------------------------------------------
                         case "withdraw" :
+                            String accountToWithdraw = in.readUTF();
+                            double amountToWithdraw = in.readDouble();
                             try {
-                                bank.getAccount(in.readUTF()).withdraw(in.readDouble());
+                                bank.getAccount(accountToWithdraw).withdraw(amountToWithdraw);
+                                out.writeUTF("ok");
                             } catch (InactiveException e) {
-                                System.out.println("Account inactive");
-                                // this.out.writeBoolean(false);
+                                out.writeUTF("inactive");
+                            } catch (OverdrawException e) {
+                                out.writeUTF("overdraw");
+                            } catch (IllegalArgumentException e) {
+                                out.writeUTF("illegal");
                             }
                             break;
                         // ------------------------------------------------------------------
@@ -203,8 +210,6 @@ public class BankServer {
                 } catch (IOException e) {
                     e.printStackTrace();
                     break;
-                } catch (OverdrawException e) {
-                    e.printStackTrace();
                 }
             }
         }

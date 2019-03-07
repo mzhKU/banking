@@ -70,43 +70,36 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public void deposit(double amount) throws IOException, IllegalArgumentException, InactiveException {
-            /*
-            if(amount < 0.0) {
+            out.writeUTF("deposit");
+            out.flush();
+            out.writeUTF(number);
+            out.flush();
+            out.writeDouble(amount);
+            out.flush();
+            String serverResponse = in.readUTF();
+            if(serverResponse.equals("illegal")) {
                 throw new IllegalArgumentException("Dont withdraw negative amounts");
-            } else {
-            */
-                out.writeUTF("deposit");
-                out.flush();
-                out.writeUTF(number);
-                out.flush();
-                out.writeDouble(amount);
-                out.flush();
-                String serverResponse = in.readUTF();
-                if(serverResponse.equals("illegal")) {
-                    throw new IllegalArgumentException("Dont withdraw negative amounts");
-                }
-                if(serverResponse.equals("inactive")) {
-                    throw new InactiveException();
-                }
-                /*
             }
-            */
+            if(serverResponse.equals("inactive")) {
+                throw new InactiveException();
+            }
         }
 
         @Override
         public void withdraw(double amount) throws IOException, IllegalArgumentException, OverdrawException, InactiveException {
-            if(amount < this.balance) {
+            out.writeUTF("withdraw");
+            out.flush();
+            out.writeUTF(number);
+            out.flush();
+            out.writeDouble(amount);
+            out.flush();
+
+            String serverResponse = in.readUTF();
+            if(serverResponse.equals("overdraw")) {
                 throw new OverdrawException("Overdraw");
             }
-            if(amount < 0.0) {
-                    throw new IllegalArgumentException("Dont withdraw negative amounts");
-            } else {
-                out.writeUTF("withdraw");
-                out.flush();
-                out.writeUTF(number);
-                out.flush();
-                out.writeDouble(amount);
-                out.flush();
+            if(serverResponse.equals("illegal")) {
+                throw new IllegalArgumentException("Illegal");
             }
         }
 
