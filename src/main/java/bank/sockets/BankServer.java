@@ -136,11 +136,18 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                         case "deposit" :
+                            String accountToDeposit = in.readUTF();
+                            double amountToDeposit = in.readDouble();
                             try {
-                                bank.getAccount(in.readUTF()).deposit(in.readDouble());
+                                bank.getAccount(accountToDeposit).deposit(amountToDeposit);
+                                out.writeUTF("ok");
                             } catch (InactiveException e) {
                                 System.out.println("Account inactive");
+                                out.writeUTF("inactive");
                                 // this.out.writeBoolean(false);
+                            } catch (IllegalArgumentException e) {
+                                out.writeUTF("illegal");
+                                out.flush();
                             }
                             break;
                         case "withdraw" :

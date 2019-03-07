@@ -70,26 +70,31 @@ public class Driver implements bank.BankDriver {
 
         @Override
         public void deposit(double amount) throws IOException, IllegalArgumentException, InactiveException {
-            if(!this.isActive()) {
-                throw new InactiveException("Account inactive");
-            }
+            /*
             if(amount < 0.0) {
                 throw new IllegalArgumentException("Dont withdraw negative amounts");
             } else {
+            */
                 out.writeUTF("deposit");
                 out.flush();
                 out.writeUTF(number);
                 out.flush();
                 out.writeDouble(amount);
                 out.flush();
+                String serverResponse = in.readUTF();
+                if(serverResponse.equals("illegal")) {
+                    throw new IllegalArgumentException("Dont withdraw negative amounts");
+                }
+                if(serverResponse.equals("inactive")) {
+                    throw new InactiveException();
+                }
+                /*
             }
+            */
         }
 
         @Override
         public void withdraw(double amount) throws IOException, IllegalArgumentException, OverdrawException, InactiveException {
-            if(!this.isActive()) {
-                throw new InactiveException("Account inactive");
-            }
             if(amount < this.balance) {
                 throw new OverdrawException("Overdraw");
             }
