@@ -71,10 +71,16 @@ public class BankServer {
                             System.out.println("[Server:getAccount]Account number: " + accountNumber);
                             System.out.println("[Server:getAccount]Bank account: " + bank.getAccount(accountNumber));
 
-                            out.writeUTF(bank.getAccount(accountNumber).getNumber());
-                            out.flush();
-                            out.writeUTF(bank.getAccount(accountNumber).getOwner());
-                            out.flush();
+                            if(bank.getAccount(accountNumber) == null) {
+                                out.writeUTF("");
+                                out.writeUTF("");
+                                out.flush();
+                            } else {
+                                out.writeUTF(bank.getAccount(accountNumber).getNumber());
+                                out.flush();
+                                out.writeUTF(bank.getAccount(accountNumber).getOwner());
+                                out.flush();
+                            }
 
                             break;
                         // ------------------------------------------------------------------
@@ -153,14 +159,33 @@ public class BankServer {
                             break;
                         // ------------------------------------------------------------------
                         case "closeAccount":
-                            System.out.println("[Server]Close account.");
-                            String closeAccount = this.in.readUTF();
-                            if (bank.getAccount(closeAccount).isActive()) {
-                                bank.closeAccount(closeAccount);
-                                out.writeBoolean(true);
-                            } else {
-                                out.writeBoolean(false);
+                            String closeAccount = in.readUTF();
+
+                            if(!bank.getAccountNumbers().contains(closeAccount)) {
+                                out.writeUTF("non-exist");
+                                break;
                             }
+
+                            if(bank.getAccount(closeAccount).getBalance() > 0.0) {
+                                out.writeUTF("nonzero");
+                                break;
+                            }
+
+                            if (!bank.getAccount(closeAccount).isActive()) {
+                                out.writeUTF("inactive");
+                                break;
+                            }
+
+                            out.writeUTF("ok");
+                            try {
+                                bank.closeAccount(closeAccount);
+                            } catch (InactiveException e) {
+                                System.out.println("[Server:close]Inactive exception");
+                            } catch (IllegalArgumentException i) {
+                                System.out.println("[Server:close]Illegal argument");
+                                System.out.println("[Server:close]from.balance: " + bank.getAccount(closeAccount).getBalance());
+                            }
+
                             break;
                         // ------------------------------------------------------------------
                         default:

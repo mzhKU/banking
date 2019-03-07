@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer$BankHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer$BankHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -54,25 +62,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="95" />
+          <entry key="java" value="97" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="95" />
+          <entry key="JAVA" value="97" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="37811" />
+          <entry key="java" value="39802" />
           <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="37811" />
+          <entry key="JAVA" value="39802" />
           <entry key="PLAIN_TEXT" value="111" />
         </counts>
       </usages-collector>
@@ -88,8 +96,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
-                  <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+                <state relative-caret-position="225">
+                  <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#3662#3663#0" expanded="true" />
@@ -99,45 +107,40 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="228">
-                  <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#624#625#0" expanded="true" />
-                    <element signature="e#642#643#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="324">
-                  <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.71225804">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="197">
+                      <caret line="101" column="41" lean-forward="true" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="40">
+                      <caret line="327" column="61" selection-start-line="327" selection-start-column="61" selection-end-line="327" selection-end-column="61" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -491,8 +494,8 @@
         <option value="$PROJECT_DIR$/src/main/java/bank/notes.txt" />
         <option value="$PROJECT_DIR$/src/main/java/bank/local/DriverTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" />
       </list>
     </option>
   </component>
@@ -605,7 +608,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551817492743" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551944839703" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -752,7 +755,7 @@
       <workItem from="1551683920904" duration="11597000" />
       <workItem from="1551723221701" duration="9679000" />
       <workItem from="1551812429981" duration="5155000" />
-      <workItem from="1551852737403" duration="6231000" />
+      <workItem from="1551852737403" duration="9657000" />
     </task>
     <servers />
   </component>
@@ -789,10 +792,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104946000" />
+    <option name="totallyTimeSpent" value="108372000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="47" y="-4" width="1873" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -800,18 +803,18 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.50127226" side_tool="true" weight="0.1419989" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49695122" visible="true" weight="0.12140575" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49695122" visible="true" weight="0.12452212" />
       <window_info id="Structure" order="6" sideWeight="0.5030488" side_tool="true" weight="0.2904157" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.31846473" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4909478" weight="0.29460582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.48989624" visible="true" weight="0.29460582" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5034602" side_tool="true" weight="0.2991453" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49307775" weight="0.32780084" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49254525" weight="0.32780084" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.48935038" visible="true" weight="0.24585062" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.5106496" side_tool="true" visible="true" weight="0.24585062" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.48880392" weight="0.1960581" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.51010376" side_tool="true" visible="true" weight="0.29460582" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -1038,7 +1041,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="12">
           <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
           <folding>
             <element signature="e#624#625#0" expanded="true" />
@@ -1047,32 +1050,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3662#3663#0" expanded="true" />
-            <element signature="e#3689#3690#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="40">
+          <caret line="327" column="61" selection-start-line="327" selection-start-column="61" selection-end-line="327" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk-11.0.2/lib/src.zip!/java.base/java/net/PlainSocketImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="135" column="16" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
+        <state relative-caret-position="197">
+          <caret line="101" column="41" lean-forward="true" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="225">
+          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -90,8 +90,8 @@ public class Driver implements bank.BankDriver {
             if(!this.isActive()) {
                 throw new InactiveException("Account inactive");
             }
-            if(amount > this.balance) {
-                throw new IllegalArgumentException("Balance too low.");
+            if(amount < this.balance) {
+                throw new OverdrawException("Overdraw");
             }
             if(amount < 0.0) {
                     throw new IllegalArgumentException("Dont withdraw negative amounts");
@@ -139,19 +139,32 @@ public class Driver implements bank.BankDriver {
         }
 
         @Override
-        public boolean closeAccount(String number) throws IOException {
+        public boolean closeAccount(String number) throws IOException, InactiveException, IllegalArgumentException {
             out.writeUTF("closeAccount");
             out.flush();
             out.writeUTF(number);
             out.flush();
-            Boolean close = null;
-            try {
-                close = in.readBoolean();
-            } catch (IOException e) {
-                System.out.println(e.getStackTrace());
+
+            String serverStatus = in.readUTF();
+
+            if(serverStatus.equals("non-exist")) {
+                System.out.println("[Client:closeAccount]Non existant account");
                 return false;
             }
-            return close;
+
+            if(serverStatus.equals("nonzero")) {
+                System.out.println("[Client:closeAccount]Nonzero");
+                // throw new IllegalArgumentException();
+                return false;
+            }
+
+            if(serverStatus.equals("inactive")) {
+                System.out.println("[Client:closeAccount]Inactive");
+                return false;
+                // throw new InactiveException();
+            }
+
+            return true;
         }
 
         @Override
@@ -177,18 +190,16 @@ public class Driver implements bank.BankDriver {
             System.out.println("[Client:socketBank:getAccount]Number: " + number);
             out.writeUTF(number);
             out.flush();
-            DataInputStream accountInputStream = new DataInputStream(s.getInputStream());
 
-            String accountNumber = accountInputStream.readUTF();
-            String accountOwner  = accountInputStream.readUTF();
+            String accountNumber = in.readUTF();
+            String accountOwner  = in.readUTF();
+
             System.out.println("[Client:socketBank:getAccount]Received number: " + accountNumber);
 
-            if(accountNumber != null) {
-                // Return a proxy
-                return new SocketAccount(accountOwner, number);
-            } else {
+            if(accountNumber.equals("")) {
                 return null;
             }
+            return new SocketAccount(accountOwner, number);
         }
 
         @Override

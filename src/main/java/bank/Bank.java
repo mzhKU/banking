@@ -49,7 +49,7 @@ public interface Bank {
 	 * @throws IOException
 	 *             if a remoting or communication problem occurs
 	 */
-	boolean closeAccount(String number) throws IOException;
+	boolean closeAccount(String number) throws IOException, InactiveException;
 
 	/**
 	 * Returns a set of the account numbers (of type String) of all currently
