@@ -92,33 +92,18 @@ public class BankServer {
                             System.out.println("[Server:transfer]From: " + from);
                             System.out.println("[Server:transfer]to: " + to);
 
-                            if(!from.isActive() || !to.isActive()) {
+                            try {
+                                bank.transfer(from, to, amount);
+                                out.writeUTF("ok");
+                            } catch (InactiveException e) {
                                 out.writeUTF("inactive");
                                 out.flush();
-                                break;
-                            }
-                            if(amount < 0.0) {
+                            } catch (IllegalArgumentException e) {
                                 out.writeUTF("illegal");
                                 out.flush();
-                                break;
-                            }
-                            if(from.getBalance() < amount) {
+                            } catch (OverdrawException e) {
                                 out.writeUTF("overdraw");
                                 out.flush();
-                                break;
-                            } else {
-                                try {
-                                    bank.transfer(from, to, amount);
-                                } catch (InactiveException e) {
-                                    System.out.println("[Server:transfer]Inactive exception");
-                                    // this.out.writeBoolean(false);
-                                } catch (OverdrawException o) {
-                                    System.out.println("[Server:transfer]Overdraw exception");
-                                } catch (IllegalArgumentException i) {
-                                    System.out.println("[Server:transfer]Illegal argument");
-                                    System.out.println("[Server:transfer]from.balance: " + from.getBalance());
-                                    System.out.println("[Server:transfer]amount: " + amount);
-                                }
                             }
                             break;
                         // ------------------------------------------------------------------
