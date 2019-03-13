@@ -1,5 +1,6 @@
 package bank.http;
 
+import bank.InactiveException;
 import com.sun.net.httpserver.Filter;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -18,9 +19,25 @@ public class BankHttpServer {
     public static void main(String[] args) throws IOException {
         int port = 5555;
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+        setupTestBank();
         server.createContext("/bank", new BankHandler(bank)).getFilters().add(new ParameterParser());
         server.start();
         System.out.println("Server available on port " + port);
+    }
+
+    // Create two test accounts with deposit
+    private static void setupTestBank() {
+        String one = bank.createAccount("Thomas");
+        String two = bank.createAccount("Michael");
+        try {
+            bank.getAccount(one).deposit(100);
+            bank.getAccount(two).deposit(100);
+        } catch (IOException e) {
+            System.out.println("IOException");
+        } catch (InactiveException e) {
+            System.out.println("Inactive");
+        }
+        System.out.println("[BankHandler:setupBank]Done");
     }
 
     static class ParameterParser extends Filter {

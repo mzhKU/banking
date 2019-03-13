@@ -11,11 +11,13 @@ import java.nio.charset.Charset;
 import java.nio.charset.IllegalCharsetNameException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankHandler implements HttpHandler {
 
     private String RESPONSE = "";
-    private String INDEX = "";
+    private String INDEX    = "";
 
     private static bank.http.Bank bank;
 
@@ -43,12 +45,17 @@ public class BankHandler implements HttpHandler {
         String response = "";
         StringBuilder buf = new StringBuilder();
         if(exchange.getRequestURI().getPath().endsWith("bank")) {
-            buf.append(INDEX);
+            String accountList = "";
+            for(String accountNumber: bank.getAccountNumbers()) {
+                accountList += "<li>" + accountNumber + "</li>";
+            }
+            buf.append(String.format(INDEX, accountList));
         }
         if(exchange.getRequestURI().getPath().endsWith("getAccount")) {
             buf.append(String.format(RESPONSE, "getAccount"));
         }
         response = buf.toString();
+        System.out.println(response);
 
         exchange.getResponseHeaders().add("Content-type", "text/html; charset=UTF-8");
         exchange.sendResponseHeaders(200, 0);
@@ -57,17 +64,7 @@ public class BankHandler implements HttpHandler {
         os.close();
     }
 
-    private void setupBank() {
-        String id = bank.createAccount("thomas");
-        try {
-            bank.getAccount(id).deposit(100);
-        } catch (IOException e) {
-            System.out.println("IOException");
-        } catch (InactiveException e) {
-            System.out.println("Inactive");
-        }
-        System.out.println("[BankHandler:setupBank]Done");
-    }
+
 
 
 
