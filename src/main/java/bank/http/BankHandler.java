@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class BankHandler implements HttpHandler {
 
@@ -51,8 +52,10 @@ public class BankHandler implements HttpHandler {
             }
             buf.append(String.format(INDEX, accountList));
         }
-        if(exchange.getRequestURI().getPath().endsWith("getAccount")) {
-            buf.append(String.format(RESPONSE, "getAccount"));
+        if("POST".equals(exchange.getRequestMethod())) {
+            Map<String, Object> parameters = (Map<String, Object>) exchange.getAttribute("parameters");
+            String newAccount = (String) parameters.get("accountHolderName");
+            buf.append(String.format(RESPONSE, newAccount));
         }
         response = buf.toString();
         System.out.println(response);

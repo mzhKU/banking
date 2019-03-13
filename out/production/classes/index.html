@@ -5,7 +5,17 @@
         <title>Bank</title>
     </head>
     <body>
-        <div>Bank index</div>
-        <ul>%s</ul>
+        <div>
+            <h4>Current accounts</h4>
+            <ul>%s</ul>
+        </div>
+
+        <div>
+            <h4>Register new account</h4>
+            <form name="createAccount" action="/bank" method="POST">
+                <input type="text" name="accountHolderName">
+                <input type="submit" name="submit" value="Create Account">
+            </form>
+        </div>
     </body>
 </html>
