@@ -14,16 +14,25 @@ import java.nio.file.Paths;
 
 public class BankHandler implements HttpHandler {
 
+    private String RESPONSE = "";
     private String INDEX = "";
+
     private static bank.http.Bank bank;
 
     public BankHandler(bank.http.Bank bank) throws IOException {
         this.bank = bank;
         try {
-            URI uri = this.getClass().getResource("/index.html").toURI();
-            StringBuilder buf = new StringBuilder();
-            Files.lines(Paths.get(uri)).forEach(buf::append);
-            INDEX = buf.toString();
+            URI responseTemplate = this.getClass().getResource("/response.html").toURI();
+            URI indexTemplate    = this.getClass().getResource("/index.html").toURI();
+
+            StringBuilder responseBuffer = new StringBuilder();
+            StringBuilder indexBuffer    = new StringBuilder();
+
+            Files.lines(Paths.get(responseTemplate)).forEach(responseBuffer::append);
+            Files.lines(Paths.get(indexTemplate)).forEach(indexBuffer::append);
+
+            RESPONSE = responseBuffer.toString();
+            INDEX    = indexBuffer.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,13 +41,15 @@ public class BankHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         String response = "";
+        StringBuilder buf = new StringBuilder();
         if(exchange.getRequestURI().getPath().endsWith("bank")) {
-            StringBuilder buf = new StringBuilder();
             buf.append(INDEX);
-            response = buf.toString();
         }
+        if(exchange.getRequestURI().getPath().endsWith("getAccount")) {
+            buf.append(String.format(RESPONSE, "getAccount"));
+        }
+        response = buf.toString();
 
-        System.out.println("[BankHandler:handle]Response: " + response);
         exchange.getResponseHeaders().add("Content-type", "text/html; charset=UTF-8");
         exchange.sendResponseHeaders(200, 0);
         OutputStream os = exchange.getResponseBody();

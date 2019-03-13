@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/http/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/http/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/response.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Servers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Servers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Servers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Servers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/BankHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/http/BankHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -65,29 +60,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="java" value="113" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
+          <entry key="HTML" value="2" />
           <entry key="JAVA" value="113" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="34" />
-          <entry key="java" value="44884" />
+          <entry key="html" value="197" />
+          <entry key="java" value="45919" />
           <entry key="txt" value="176" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="34" />
-          <entry key="JAVA" value="44884" />
+          <entry key="HTML" value="197" />
+          <entry key="JAVA" value="45919" />
           <entry key="PLAIN_TEXT" value="176" />
         </counts>
       </usages-collector>
@@ -97,14 +92,14 @@
     <favorites_list name="bank-assignment-01" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5750332">
+    <splitter split-orientation="vertical" split-proportion="0.7140741">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
-                  <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+                <state relative-caret-position="283">
+                  <caret line="21" selection-start-line="21" selection-end-line="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="class#ParameterParser#0;class#BankHttpServer#0" />
@@ -187,8 +182,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+                <state relative-caret-position="57">
+                  <caret line="53" column="113" selection-start-line="53" selection-start-column="113" selection-end-line="53" selection-end-column="113" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -198,9 +193,14 @@
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/response.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -568,6 +568,7 @@
         <option value="$PROJECT_DIR$/src/main/java/bank/http/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/http/Bank.java" />
         <option value="$PROJECT_DIR$/src/main/resources/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/response.html" />
         <option value="$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" />
       </list>
@@ -582,7 +583,7 @@
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="11" />
     <option name="y" value="24" />
-    <option name="width" value="1255" />
+    <option name="width" value="1682" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -632,15 +633,6 @@
               <item name="bank-assignment-01" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bank" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bank-assignment-01" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bank-assignment-01" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -656,7 +648,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552471279617" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552472601290" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -822,7 +814,7 @@
       <workItem from="1552141656650" duration="41000" />
       <workItem from="1552253167897" duration="315000" />
       <workItem from="1552293272609" duration="9162000" />
-      <workItem from="1552463065216" duration="6940000" />
+      <workItem from="1552463065216" duration="8107000" />
     </task>
     <servers />
   </component>
@@ -859,7 +851,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127860000" />
+    <option name="totallyTimeSpent" value="129027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="11" y="24" width="1255" height="1056" extended-state="4" />
@@ -870,10 +862,10 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.50127226" side_tool="true" weight="0.1419989" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49695122" visible="true" weight="0.20197856" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49695122" visible="true" weight="0.20197856" />
       <window_info id="Structure" order="6" sideWeight="0.5030488" side_tool="true" weight="0.2904157" />
       <window_info anchor="bottom" id="Build" order="0" weight="0.31846473" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.485623" weight="0.29460582" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.485623" weight="0.29380342" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5034602" side_tool="true" weight="0.2991453" />
       <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4909478" weight="0.32692307" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
@@ -883,7 +875,7 @@
       <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.5149095" side_tool="true" weight="0.1960581" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.48509052" visible="true" weight="0.12286325" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" sideWeight="0.48509052" visible="true" weight="0.19551282" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -1162,13 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1202,20 +1187,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/response.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="283">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ParameterParser#0;class#BankHttpServer#0" />
@@ -1225,6 +1210,16 @@
             <element signature="e#1799#1829#1" expanded="true" />
             <element signature="e#2274#2304#0" expanded="true" />
             <element signature="method#parseQuery#0;class#ParameterParser#0;class#BankHttpServer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="53" column="113" selection-start-line="53" selection-start-column="113" selection-end-line="53" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
