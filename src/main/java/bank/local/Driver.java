@@ -65,6 +65,8 @@ public class Driver implements bank.BankDriver {
                     if(!this.getAccount(number).isActive()) {
                         return false;
                     }
+					// Unduplicate
+                    if(true) {}
                     if(this.getAccount(number).getBalance() == 0) {
                         accounts.get(number).active = false;
                         return true;
@@ -82,8 +84,7 @@ public class Driver implements bank.BankDriver {
 		}
 
 		@Override
-		public void transfer(bank.Account from, bank.Account to, double amount)
-				throws IOException, InactiveException, OverdrawException {
+		public void transfer(bank.Account from, bank.Account to, double amount) throws IOException, InactiveException, OverdrawException {
 		    if(!from.isActive() || !to.isActive()) {
 		        throw new InactiveException("Inactive accounts involved in transfer.");
             } else if (amount < 0.0) {
