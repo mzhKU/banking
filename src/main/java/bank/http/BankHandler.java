@@ -1,6 +1,5 @@
 package bank.http;
 
-import bank.InactiveException;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -8,57 +7,40 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.nio.charset.Charset;
-import java.nio.charset.IllegalCharsetNameException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class BankHandler implements HttpHandler {
 
     private String RESPONSE = "";
-    private String INDEX    = "";
+    private String INDEX = "";
 
     private static bank.http.Bank bank;
 
     public BankHandler(bank.http.Bank bank) throws IOException {
         this.bank = bank;
-        try {
-            URI responseTemplate = this.getClass().getResource("/response.html").toURI();
-            URI indexTemplate    = this.getClass().getResource("/index.html").toURI();
-
-            StringBuilder responseBuffer = new StringBuilder();
-            StringBuilder indexBuffer    = new StringBuilder();
-
-            Files.lines(Paths.get(responseTemplate)).forEach(responseBuffer::append);
-            Files.lines(Paths.get(indexTemplate)).forEach(indexBuffer::append);
-
-            RESPONSE = responseBuffer.toString();
-            INDEX    = indexBuffer.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setIndexTemplate();
     }
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         String response = "";
         StringBuilder buf = new StringBuilder();
-        if(exchange.getRequestURI().getPath().endsWith("bank")) {
-            String accountList = "";
-            for(String accountNumber: bank.getAccountNumbers()) {
-                accountList += "<li>" + accountNumber + "</li>";
-            }
-            buf.append(String.format(INDEX, accountList));
-        }
-        if("POST".equals(exchange.getRequestMethod())) {
+        System.out.println("[BankHandler:handle]Request URI: " + exchange.getRequestURI());
+        buf.append(accountList());
+
+        if(exchange.getRequestMethod().equals("POST")) {
             Map<String, Object> parameters = (Map<String, Object>) exchange.getAttribute("parameters");
-            String newAccount = (String) parameters.get("accountHolderName");
-            buf.append(String.format(RESPONSE, newAccount));
+            String user = (String) parameters.get("user");
+            this.bank.createAccount(user);
+            exchange.getResponseHeaders().add("Location", "/bank");
+            exchange.sendResponseHeaders(301, -1);
+            return;
         }
+
         response = buf.toString();
-        System.out.println(response);
+        // System.out.println(response);
 
         exchange.getResponseHeaders().add("Content-type", "text/html; charset=UTF-8");
         exchange.sendResponseHeaders(200, 0);
@@ -67,10 +49,32 @@ public class BankHandler implements HttpHandler {
         os.close();
     }
 
-
-
-
-
-
-
+    public String accountList() {
+        String accountList = "";
+        for (String accountNumber : bank.getAccountNumbers()) {
+            try {
+                accountList += "<tr>";
+                accountList += "<td>" + accountNumber + "</td>";
+                accountList += "<td>" + bank.getAccount(accountNumber).getBalance() + "</td>";
+                accountList += "<td>";
+                accountList += "<form><input type=\"number\" name=\"deposit\"><input type=\"submit\" value=\"Deposit\"></form>";
+                accountList += "</td>";
+                accountList += "</tr>";
+                // accountList += "<li>Account Number: " + accountNumber + ", Balance: " + bank.getAccount(accountNumber).getBalance() + "</li>";
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return String.format(INDEX, accountList);
+    }
+    public void setIndexTemplate() {
+        try {
+            URI indexTemplate = this.getClass().getResource("/index.html").toURI();
+            StringBuilder indexBuffer = new StringBuilder();
+            Files.lines(Paths.get(indexTemplate)).forEach(indexBuffer::append);
+            this.INDEX = indexBuffer.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

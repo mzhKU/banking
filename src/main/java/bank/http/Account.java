@@ -3,6 +3,9 @@ package bank.http;
 import bank.InactiveException;
 import bank.OverdrawException;
 
+
+// Copy of local.Driver.Account
+
 public class Account implements bank.Account {
     private String number;
     private String owner;

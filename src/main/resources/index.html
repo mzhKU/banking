@@ -5,16 +5,26 @@
         <title>Bank</title>
     </head>
     <body>
+
+        <h1>Bank</h1>
+
         <div>
-            <h4>Current accounts</h4>
-            <ul>%s</ul>
+            <h4>Active accounts:</h4>
+            <table>
+                <thead>
+                    <td>Account</td>
+                    <td>Balance</td>
+                    <td>Deposit</td>
+                </thead>
+                %s
+            </table>
         </div>
 
         <div>
             <h4>Register new account</h4>
             <form name="createAccount" action="/bank" method="POST">
-                <input type="text" name="accountHolderName">
-                <input type="submit" name="submit" value="Create Account">
+                <input type="text" name="user" value="Test User">
+                <input type="submit" name="submit" value="Create">
             </form>
         </div>
     </body>

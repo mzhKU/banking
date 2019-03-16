@@ -1,6 +1,7 @@
 package bank.http;
 
 import bank.InactiveException;
+import bank.OverdrawException;
 import com.sun.net.httpserver.Filter;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -32,10 +33,14 @@ public class BankHttpServer {
         try {
             bank.getAccount(one).deposit(100);
             bank.getAccount(two).deposit(100);
+            bank.getAccount(one).withdraw(100);
+            bank.closeAccount(one);
         } catch (IOException e) {
             System.out.println("IOException");
         } catch (InactiveException e) {
             System.out.println("Inactive");
+        } catch (OverdrawException e) {
+            e.printStackTrace();
         }
         System.out.println("[BankHandler:setupBank]Done");
     }
