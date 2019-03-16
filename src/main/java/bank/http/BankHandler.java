@@ -31,16 +31,40 @@ public class BankHandler implements HttpHandler {
         buf.append(accountList());
 
         if(exchange.getRequestMethod().equals("POST")) {
-            Map<String, Object> parameters = (Map<String, Object>) exchange.getAttribute("parameters");
-            String user = (String) parameters.get("user");
-            this.bank.createAccount(user);
+            Map<String, Object> parameters = (Map<String, Object>)exchange.getAttribute("parameters");
+
+            // System.out.println(parameters.keySet());
+
+            if(parameters.keySet().contains("createAccount")) {
+                String user = (String)parameters.get("createAccount");
+                this.bank.createAccount(user);
+            }
+
+            if(parameters.keySet().contains("depositAmount")) {
+                try {
+                    double depositAmount  = Double.valueOf((String)parameters.get("depositAmount"));
+                    String depositAccount = (String)parameters.get("depositAccount");
+                    this.bank.getAccount(depositAccount).deposit(depositAmount);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if(parameters.keySet().contains("withdrawAmount")) {
+                try {
+                    double withdrawAmount  = Double.valueOf((String)parameters.get("withdrawAmount"));
+                    String withdrawAccount = (String)parameters.get("withdrawAccount");
+                    this.bank.getAccount(withdrawAccount).withdraw(withdrawAmount);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
             exchange.getResponseHeaders().add("Location", "/bank");
             exchange.sendResponseHeaders(301, -1);
             return;
         }
 
         response = buf.toString();
-        // System.out.println(response);
 
         exchange.getResponseHeaders().add("Content-type", "text/html; charset=UTF-8");
         exchange.sendResponseHeaders(200, 0);
@@ -55,10 +79,27 @@ public class BankHandler implements HttpHandler {
             try {
                 accountList += "<tr>";
                 accountList += "<td>" + accountNumber + "</td>";
+                accountList += "<td>" + bank.getAccount(accountNumber).getOwner() + "</td>";
                 accountList += "<td>" + bank.getAccount(accountNumber).getBalance() + "</td>";
+
+                //  Deposit
                 accountList += "<td>";
-                accountList += "<form><input type=\"number\" name=\"deposit\"><input type=\"submit\" value=\"Deposit\"></form>";
+                accountList += "<form action=\"/bank\" method=\"POST\">";
+                accountList += "<input type=\"number\" name=\"depositAmount\">";
+                accountList += "<input type=\"submit\" value=\"Deposit\">";
+                accountList += "<input type=\"hidden\" value=\"" + accountNumber + "\" name=\"depositAccount\">";
+                accountList += "</form>";
                 accountList += "</td>";
+
+                // Withdraw
+                accountList += "<td>";
+                accountList += "<form action=\"/bank\" method=\"POST\">";
+                accountList += "<input type=\"number\" name=\"withdrawAmount\">";
+                accountList += "<input type=\"submit\" value=\"Withdraw\">";
+                accountList += "<input type=\"hidden\" value=\"" + accountNumber + "\" name=\"withdrawAccount\">";
+                accountList += "</form>";
+                accountList += "</td>";
+
                 accountList += "</tr>";
                 // accountList += "<li>Account Number: " + accountNumber + ", Balance: " + bank.getAccount(accountNumber).getBalance() + "</li>";
             } catch (IOException e) {
@@ -67,6 +108,7 @@ public class BankHandler implements HttpHandler {
         }
         return String.format(INDEX, accountList);
     }
+
     public void setIndexTemplate() {
         try {
             URI indexTemplate = this.getClass().getResource("/index.html").toURI();
