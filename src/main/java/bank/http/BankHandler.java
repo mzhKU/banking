@@ -1,5 +1,7 @@
 package bank.http;
 
+import bank.InactiveException;
+import bank.OverdrawException;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -9,7 +11,9 @@ import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class BankHandler implements HttpHandler {
 
@@ -59,6 +63,20 @@ public class BankHandler implements HttpHandler {
                     e.printStackTrace();
                 }
             }
+
+            if(parameters.keySet().contains("transfer")) {
+                Account from = (Account) this.bank.getAccount((String)parameters.get("fromAccount"));
+                Account to   = (Account) this.bank.getAccount((String)parameters.get("toAccount"));
+                double transferAmount = Double.valueOf((String)parameters.get("transferAmount"));
+                try {
+                    this.bank.transfer(from, to, transferAmount);
+                } catch (InactiveException e) {
+                    e.printStackTrace();
+                } catch (OverdrawException e) {
+                    e.printStackTrace();
+                }
+            }
+
             exchange.getResponseHeaders().add("Location", "/bank");
             exchange.sendResponseHeaders(301, -1);
             return;
@@ -75,7 +93,10 @@ public class BankHandler implements HttpHandler {
 
     public String accountList() {
         String accountList = "";
-        for (String accountNumber : bank.getAccountNumbers()) {
+
+        Set<String> accounts = bank.getAccountNumbers();
+
+        for (String accountNumber : accounts) {
             try {
                 accountList += "<tr>";
                 accountList += "<td>" + accountNumber + "</td>";

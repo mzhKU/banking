@@ -3,24 +3,54 @@
     <head>
         <meta charset="UTF-8">
         <title>Bank</title>
+        <style>
+            input[type="number"] { width: 50px; }
+            input[type="text"]   { width: 100px; }
+            input[list]          { width: 50px; }
+            thead                {font-weight: bold; }
+        </style>
     </head>
     <body>
         <h1>Bank</h1>
-        <div>
-            <h4>Active accounts:</h4>
-            <table>
-                <thead><td>Account</td><td>Name</td><td>Balance</td><td>Deposit</td></thead>
-                <tbody>%s</tbody>
-            </table>
-            </table>
-        </div>
 
         <div>
-            <h4>Register new account</h4>
+            <h2>Register new account</h2>
             <form name="createAccount" action="/bank" method="POST">
                 <input type="text" name="createAccount" value="Test User">
                 <input type="submit" name="submit" value="Create">
             </form>
         </div>
+
+        <div>
+            <h2>Transfer</h2>
+            <form action="/bank" method="POST">
+                <table>
+                    <thead><td>From</td><td>To</td><td>Amount</td></thead>
+                    <tr>
+                        <td><input type="text" name="fromAccount"></td>
+                        <td><input type="text" name="toAccount"></td>
+                        <td><input type="number" name="transferAmount"></td>
+                        <td><input type="submit" name="transfer"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div>
+            <h2>Active accounts:</h2>
+            <table>
+                <thead>
+                    <td>Account        </td>
+                    <td>Name           </td>
+                    <td>Balance        </td>
+                    <td>Deposit        </td>
+                    <td>Withdraw       </td>
+                </thead>
+                <tbody>%s</tbody>
+            </table>
+            </table>
+        </div>
+
+
     </body>
 </html>
