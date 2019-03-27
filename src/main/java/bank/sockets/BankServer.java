@@ -16,10 +16,10 @@ public class BankServer {
     // ClassNotFoundException: if readObject() doesn't return the object type expected
     public static void main(String args[]) throws IOException {
 
-        // Port is defined server side by the service provider
-        // It has to be known by the client, to which server we're
+        // Port is defined Server side by the service provider
+        // It has to be known by the client, to which Server we're
         // connecting. The port is *not* provided from the client
-        // to the server.
+        // to the Server.
         int serverPort = 1234;
 
         ServerSocket server = new ServerSocket(serverPort);

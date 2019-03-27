@@ -43,7 +43,7 @@ public class DriverFactory {
 		try {
 			driver.connect(serverArgs);
 		} catch (IOException e) {
-			System.out.println("Problem while connecting to the server:");
+			System.out.println("Problem while connecting to the Server:");
 			e.printStackTrace();
 			System.exit(1);
 		}

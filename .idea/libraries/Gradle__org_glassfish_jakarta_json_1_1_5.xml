@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish:jakarta.json:1.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/jakarta.json/1.1.5/db0810e21a749c7ff934836c95d69c7c4e67b455/jakarta.json-1.1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/jakarta.json/1.1.5/95d8e2410eca14750018677e13b56b59d88b8e08/jakarta.json-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

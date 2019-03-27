@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: jakarta.json:jakarta.json-api:1.1.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.json/jakarta.json-api/1.1.5/7d44a70a005bad9a6486758a7ad08ec8dae59c29/jakarta.json-api-1.1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.json/jakarta.json-api/1.1.5/24143bd80a021655a3c156a171697a3461df2cd6/jakarta.json-api-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

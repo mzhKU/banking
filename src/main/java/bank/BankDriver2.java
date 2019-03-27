@@ -31,7 +31,7 @@ public interface BankDriver2 extends BankDriver {
 	interface UpdateHandler {
 		/**
 		 * The accountChanged method is invoked whenever an account changes
-		 * on the server side, i.e. if an account is created, closed or if
+		 * on the Server side, i.e. if an account is created, closed or if
 		 * its balance changes.
 		 * 
 		 * @param id the number of the changed account. If the argument passed

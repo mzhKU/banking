@@ -20,7 +20,7 @@ public interface BankDriver {
 
 	/**
 	 * Connects to an implementation of a bank. Parameters which designate e.g.
-	 * the name or number of the server and possibly other arguments may be
+	 * the name or number of the Server and possibly other arguments may be
 	 * passed.
 	 * 
 	 * @param args array of implementation specific arguments
@@ -29,14 +29,14 @@ public interface BankDriver {
 	void connect(String[] args) throws IOException;
 
 	/**
-	 * Disconnects from the server which is serving the bank.
+	 * Disconnects from the Server which is serving the bank.
 	 *
 	 * @throws IOException if a remoting or communication problem occurs
 	 */
 	void disconnect() throws IOException;
 
 	/**
-	 * Return the bank which is served by that server. Before getBank can be
+	 * Return the bank which is served by that Server. Before getBank can be
 	 * invoked, connect must be called. getBank must have singleton semantics,
 	 * i.e. it should return the same instance upon subsequent calls. After
 	 * disconnect has been called getBank returns null.
