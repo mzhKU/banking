@@ -9,14 +9,13 @@ import bank.InactiveException;
 import com.sun.research.ws.wadl.Request;
 
 import javax.inject.Singleton;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.io.IOException;
+import java.net.URI;
 
 import static bank.local.Driver.Bank;
 
@@ -45,6 +44,16 @@ public class BankResource {
             System.out.println("Inactive");
         }
         System.out.println("[BankHandler:setupBank]Done");
+    }
+
+    @POST
+    @Consumes("application/x-www-form-urlencoded")
+    public Response create(
+            @Context UriInfo uriInfo,
+            @FormParam("owner") String owner) throws IOException {
+        String id = bank.createAccount(owner);
+        URI location = uriInfo.getRequestUriBuilder().path(id).build();
+        return Response.created(location).build();
     }
 
     @GET

@@ -2,155 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3faf6008-20b1-470b-b01b-fbfb788b34f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sun_xml_bind_jaxb_core_2_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sun_xml_bind_jaxb_impl_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stuff/CreateSocketAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stuff/Localhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stuff/Lookup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stuff/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/stuff/MessageRessource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileChanges/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_9_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtworks_xstream_xstream_1_4_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtworks_xstream_xstream_1_4_11_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_json_bind_jakarta_json_bind_api_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_json_bind_jakarta_json_bind_api_1_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_json_jakarta_json_api_1_1_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_json_jakarta_json_api_1_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_ws_rs_jakarta_ws_rs_api_2_1_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_ws_rs_jakarta_ws_rs_api_2_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_yasson_1_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_yasson_1_0_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_external_aopalliance_repackaged_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_external_aopalliance_repackaged_2_5_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_external_jakarta_inject_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_external_jakarta_inject_2_5_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_api_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_api_2_5_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_locator_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_locator_2_5_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_utils_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_hk2_utils_2_5_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jakarta_json_1_1_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jakarta_json_1_1_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_containers_jersey_container_jdk_http_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_containers_jersey_container_jdk_http_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_client_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_client_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_common_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_common_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_server_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_server_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_inject_jersey_hk2_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_inject_jersey_hk2_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_jaxb_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_jaxb_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_json_binding_2_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_json_binding_2_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_22_0_CR2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_22_0_CR2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_linux_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_linux_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_linux_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_linux_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_linux_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_linux_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_swing_linux_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_swing_linux_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__xmlpull_xmlpull_1_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xmlpull_xmlpull_1_1_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__xpp3_xpp3_min_1_1_4c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xpp3_xpp3_min_1_1_4c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/bank-assignment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/bank-assignment.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/bank-assignment_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/bank-assignment_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/bank-assignment_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/bank-assignment_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/Account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/Bank.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/Bank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/BankDriver.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/BankDriver.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/InactiveException.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/InactiveException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/OverdrawException.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/OverdrawException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/class-use/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/class-use/Account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/class-use/Bank.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/class-use/Bank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/class-use/BankDriver.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/class-use/BankDriver.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/class-use/InactiveException.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/class-use/InactiveException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/class-use/OverdrawException.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/class-use/OverdrawException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bank/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/bank/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Servers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Servers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/BankDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/BankDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/BankDriver2$UpdateHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/BankDriver2$UpdateHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/BankDriver2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/BankDriver2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/InactiveException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/InactiveException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/OverdrawException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/OverdrawException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$DoubleFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$DoubleFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$StringDoubleConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/Client$StringDoubleConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/DriverFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/DriverFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/BankTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/BankTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/EfficiencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/EfficiencyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/EfficiencyTestDS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/EfficiencyTestDS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/FunctionalityTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/FunctionalityTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/TransferTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/gui/tests/TransferTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/http/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/Bank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/BankHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/http/BankHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/BankHttpServer$ParameterParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/http/BankHttpServer$ParameterParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/http/BankHttpServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/http/BankHttpServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver$Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/local/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/local/DriverTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/rest/Bank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/rest/BankResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/rest/BankResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/rest/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/rest/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer$BankHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer$BankHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/BankServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver$SocketBank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/bank/sockets/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/BankDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/BankDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/BankDriver2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/BankDriver2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/InactiveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/InactiveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/OverdrawException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/OverdrawException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/tests/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/tests/BankTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/tests/EfficiencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/tests/EfficiencyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/tests/EfficiencyTestDS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/tests/EfficiencyTestDS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/tests/FunctionalityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/gui/tests/TransferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/gui/tests/TransferTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/http/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/http/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/http/Bank.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/http/BankHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/local/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/local/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/local/DriverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/rest/Bank.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/rest/BankResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/rest/BankResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/rest/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/rest/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/BankServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/sockets/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Servers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Servers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -202,8 +54,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/bank/rest/BankResource.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+                <state relative-caret-position="424">
+                  <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -233,11 +85,11 @@
           </split-first>
           <split-second>
             <leaf>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="179">
-                      <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+                    <state relative-caret-position="134">
+                      <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
                       <folding>
                         <element signature="e#2142#2143#0" expanded="true" />
                         <element signature="e#2187#2188#0" expanded="true" />
@@ -246,7 +98,7 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/bank/http/BankHttpServer.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="248">
@@ -598,7 +450,7 @@
       <workItem from="1557210013498" duration="3146000" />
       <workItem from="1561019808461" duration="14873000" />
       <workItem from="1561120874145" duration="14000" />
-      <workItem from="1561363649531" duration="4501000" />
+      <workItem from="1561363649531" duration="6008000" />
     </task>
     <servers />
   </component>
@@ -635,7 +487,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190077000" />
+    <option name="totallyTimeSpent" value="191584000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,6 +500,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -669,9 +522,9 @@
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32983193" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="13" sideWeight="0.48345783" visible="true" weight="0.18258132" />
+      <window_info anchor="bottom" id="Run" order="13" sideWeight="0.48345783" visible="true" weight="0.21196222" />
       <window_info anchor="bottom" id="CheckStyle" order="14" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="15" sideWeight="0.51654214" side_tool="true" visible="true" weight="0.18258132" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="15" sideWeight="0.51654214" side_tool="true" visible="true" weight="0.21196222" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Bean Validation" order="1" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -917,13 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.ws.rs/jakarta.ws.rs-api/2.1.5/76d35c591d1b127b0523338cd7c490b7d2862305/jakarta.ws.rs-api-2.1.5-sources.jar!/javax/ws/rs/core/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/gui/DriverFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -979,17 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-          <folding>
-            <element signature="e#2142#2143#0" expanded="true" />
-            <element signature="e#2187#2188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/rest/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1016,12 +851,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.ws.rs/jakarta.ws.rs-api/2.1.5/76d35c591d1b127b0523338cd7c490b7d2862305/jakarta.ws.rs-api-2.1.5-sources.jar!/javax/ws/rs/core/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bank/rest/BankResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+        <state relative-caret-position="424">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bank/local/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding>
+            <element signature="e#2142#2143#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
           </folding>
         </state>
       </provider>
