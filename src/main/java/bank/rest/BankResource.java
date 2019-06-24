@@ -60,10 +60,21 @@ public class BankResource {
     @Path("{id}")
     public Response getAccountInfo(@PathParam("id") int id) {
         StringBuffer resp = new StringBuffer();
-        resp.append("<body><h1>");
-        resp.append(id);
-        resp.append("</h1></body>");
-        return Response.ok(resp.toString()).build();
+
+        try {
+            String accountHolderName = bank.getAccount(Integer.valueOf(id).toString()).getOwner();
+
+            resp.append("<body><h1>");
+            resp.append("<h2>Account Number</h2>");
+            resp.append(id);
+            resp.append("<h2>Account Holder</h2>");
+            resp.append(accountHolderName);
+            resp.append("</h1></body>");
+            return Response.ok(resp.toString()).build();
+
+        } catch (IOException e) {
+            return Response.serverError().build();
+        }
     }
 
 
