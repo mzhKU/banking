@@ -57,6 +57,17 @@ public class BankResource {
     }
 
     @GET
+    @Path("{id}")
+    public Response getAccountInfo(@PathParam("id") int id) {
+        StringBuffer resp = new StringBuffer();
+        resp.append("<body><h1>");
+        resp.append(id);
+        resp.append("</h1></body>");
+        return Response.ok(resp.toString()).build();
+    }
+
+
+    @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getAccountNumbers(@Context UriInfo uriInfo) throws IOException {
         StringBuffer response = new StringBuffer();
