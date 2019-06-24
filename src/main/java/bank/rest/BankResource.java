@@ -15,6 +15,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.io.IOException;
 
@@ -46,6 +47,17 @@ public class BankResource {
         }
         System.out.println("[BankHandler:setupBank]Done");
     }
+
+    @GET
+    @Path("{id}")
+    public Response getAccountInfo(@PathParam("id") int id) {
+        StringBuffer resp = new StringBuffer();
+        resp.append("<body><h1>");
+        resp.append(id);
+        resp.append("</h1></body>");
+        return Response.ok(resp.toString()).build();
+    }
+
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
