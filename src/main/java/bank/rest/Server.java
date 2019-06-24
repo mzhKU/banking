@@ -11,5 +11,6 @@ public class Server {
         ResourceConfig rc = new ResourceConfig(BankResource.class);
         // Create and start the JDK HttpServer with the Jersey application
         JdkHttpServerFactory.createHttpServer(baseUri, rc);
+
     }
 }
