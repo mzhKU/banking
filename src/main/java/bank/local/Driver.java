@@ -5,14 +5,14 @@
 
 package bank.local;
 
+import bank.InactiveException;
+import bank.OverdrawException;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import bank.InactiveException;
-import bank.OverdrawException;
 
 public class Driver implements bank.BankDriver {
 	private Bank bank = null;

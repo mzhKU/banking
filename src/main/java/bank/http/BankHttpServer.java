@@ -1,7 +1,7 @@
 package bank.http;
 
-import bank.InactiveException;
-import bank.OverdrawException;
+import bank.local.Driver;
+import bank.rest.BankResource;
 import com.sun.net.httpserver.Filter;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -10,12 +10,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.net.*;
+import java.net.InetSocketAddress;
+import java.net.URI;
+import java.net.URLDecoder;
 import java.util.*;
 
 public class BankHttpServer {
 
-    private static bank.http.Bank bank = new Bank();
+    private static bank.local.Driver.Bank bank = new Driver.Bank();
 
     public static void main(String[] args) throws IOException {
         int port = 5555;
@@ -27,22 +29,8 @@ public class BankHttpServer {
     }
 
     // Create two test accounts with deposit
-    private static void setupTestBank() {
-        String one = bank.createAccount("Thomas");
-        String two = bank.createAccount("Michael");
-        try {
-            bank.getAccount(one).deposit(100);
-            bank.getAccount(two).deposit(100);
-            bank.getAccount(one).withdraw(100);
-            bank.closeAccount(one);
-        } catch (IOException e) {
-            System.out.println("IOException");
-        } catch (InactiveException e) {
-            System.out.println("Inactive");
-        } catch (OverdrawException e) {
-            e.printStackTrace();
-        }
-        System.out.println("[BankHandler:setupBank]Done");
+    public static void setupTestBank() {
+        BankResource.setupTestBank(bank);
     }
 
     static class ParameterParser extends Filter {

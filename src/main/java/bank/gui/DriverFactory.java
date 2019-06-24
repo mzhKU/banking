@@ -5,10 +5,10 @@
 
 package bank.gui;
 
+import bank.BankDriver;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-
-import bank.BankDriver;
 
 public class DriverFactory {
 

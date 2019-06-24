@@ -11,7 +11,6 @@ import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -20,9 +19,9 @@ public class BankHandler implements HttpHandler {
     private String RESPONSE = "";
     private String INDEX = "";
 
-    private static bank.http.Bank bank;
+    private static bank.local.Driver.Bank bank;
 
-    public BankHandler(bank.http.Bank bank) throws IOException {
+    public BankHandler(bank.local.Driver.Bank bank) throws IOException {
         this.bank = bank;
         setIndexTemplate();
     }
@@ -67,6 +66,7 @@ public class BankHandler implements HttpHandler {
             if(parameters.keySet().contains("transfer")) {
                 Account from = (Account) this.bank.getAccount((String)parameters.get("fromAccount"));
                 Account to   = (Account) this.bank.getAccount((String)parameters.get("toAccount"));
+                System.out.println("[BankHandler:transfer]From: " + from + ", To: " + to);
                 double transferAmount = Double.valueOf((String)parameters.get("transferAmount"));
                 try {
                     this.bank.transfer(from, to, transferAmount);
@@ -78,14 +78,14 @@ public class BankHandler implements HttpHandler {
             }
 
             exchange.getResponseHeaders().add("Location", "/bank");
-            exchange.sendResponseHeaders(301, -1);
+            exchange.sendResponseHeaders(200, -1);
             return;
         }
 
         response = buf.toString();
 
         exchange.getResponseHeaders().add("Content-type", "text/html; charset=UTF-8");
-        exchange.sendResponseHeaders(200, 0);
+        exchange.sendResponseHeaders(301, 0);
         OutputStream os = exchange.getResponseBody();
         os.write(response.getBytes(Charset.forName("UTF-8")));
         os.close();
