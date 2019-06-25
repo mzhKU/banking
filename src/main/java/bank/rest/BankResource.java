@@ -35,25 +35,23 @@ public class BankResource {
     @GET
     @Produces(MediaType.TEXT_HTML)
     public Response getAccountNumbers(@Context UriInfo uriInfo) throws IOException {
-        StringBuffer page = new StringBuffer();
+        StringBuffer resp = new StringBuffer();
 
-        page.append("<body><h1>Accounts</h1>");
+        resp.append("<body><h1>Accounts</h1>");
         for(String a : bank.getAccountNumbers()) {
-            URI accountPath = uriInfo.getAbsolutePathBuilder().path(a).build();
-
-            page.append("<a href=" + accountPath + ">Account ");
-            page.append(bank.getAccount(a).getNumber() + ": ");
-            page.append(bank.getAccount(a).getOwner());
+            resp.append("<a href=" + uriInfo.getAbsolutePathBuilder().path(a).build() + ">Account ");
+            resp.append(bank.getAccount(a).getNumber() + ": ");
+            resp.append(bank.getAccount(a).getOwner());
+            resp.append("</a><br />");
         }
 
-        page.append("<form action=\"/bank/accounts\" method=\"POST\">");
-        page.append("<input type=\"text\" placeholder=\"New Client Name\" name=\"owner\">");
-        page.append("<br />");
-        page.append("<input type=\"submit\" value=\"Create new Account\"");
-        page.append("</form>");
-        page.append("</body>");
+        resp.append("<form method=\"POST\">");
+        resp.append("<input type=\"test\" placeholder=\"New Client\">");
+        resp.append("<input type=\"submit\" value=\"Create new Account\" name=\"owner\"");
+        resp.append("</form>");
 
-        return Response.ok(page.toString()).build();
+        resp.append("</body>");
+        return Response.ok(resp.toString()).build();
     }
 
     @GET
