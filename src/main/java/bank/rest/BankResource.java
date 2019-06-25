@@ -65,13 +65,17 @@ public class BankResource {
 
         try {
             String accountHolderName = bank.getAccount(Integer.valueOf(id).toString()).getOwner();
+            double balance = bank.getAccount(Integer.valueOf(id).toString()).getBalance();
 
-            resp.append("<body><h1>");
+            resp.append("<body>");
             resp.append("<h2>Account Number</h2>");
             resp.append(id);
             resp.append("<h2>Account Holder</h2>");
             resp.append(accountHolderName);
-            resp.append("</h1></body>");
+            resp.append("<h2>Balance</h2>");
+            resp.append(Double.valueOf(balance).toString());
+            resp.append("</body>");
+
             return Response.ok(resp.toString()).build();
 
         } catch (IOException e) {
