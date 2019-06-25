@@ -47,7 +47,7 @@ public class BankResource {
 
         resp.append("<form method=\"POST\">");
         resp.append("<input type=\"test\" placeholder=\"New Client\">");
-        resp.append("<input type=\"submit\" value=\"Create new Account\" name=\"owner\"");
+        resp.append("<input type=\"submit\" value=\"Create new Account\"");
         resp.append("</form>");
 
         resp.append("</body>");
