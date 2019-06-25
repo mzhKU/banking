@@ -44,18 +44,14 @@ public class BankResource {
             resp.append(" of " + bank.getAccount(a).getOwner());
             resp.append("</a><br />");
         }
+
+        resp.append("<form method=\"POST\">");
+        resp.append("<input type=\"test\" placeholder=\"New Client\">");
+        resp.append("<input type=\"submit\" value=\"Create new Account\"");
+        resp.append("</form>");
+
         resp.append("</body>");
         return Response.ok(resp.toString()).build();
-    }
-
-    @POST
-    @Consumes("application/x-www-form-urlencoded")
-    public Response create(
-            @Context UriInfo uriInfo,
-            @FormParam("owner") String owner) throws IOException {
-        String id = bank.createAccount(owner);
-        URI location = uriInfo.getRequestUriBuilder().path(id).build();
-        return Response.created(location).build();
     }
 
     @GET
@@ -74,14 +70,27 @@ public class BankResource {
             resp.append(accountHolderName);
             resp.append("<h2>Balance</h2>");
             resp.append(Double.valueOf(balance).toString());
-            resp.append("</body>");
 
+            resp.append("</body>");
             return Response.ok(resp.toString()).build();
 
         } catch (IOException e) {
             return Response.serverError().build();
         }
     }
+
+    @POST
+    @Consumes("application/x-www-form-urlencoded")
+    public Response create(
+            @Context UriInfo uriInfo,
+            @FormParam("owner") String owner) throws IOException {
+        String id = bank.createAccount(owner);
+        URI location = uriInfo.getRequestUriBuilder().path(id).build();
+        return Response.created(location).build();
+    }
+
+
+
 
     @GET
     @Produces("application/json")
@@ -105,5 +114,4 @@ public class BankResource {
         }
         System.out.println("[BankHandler:setupBank]Done");
     }
-
 }
