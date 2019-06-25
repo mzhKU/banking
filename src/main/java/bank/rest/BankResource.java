@@ -32,18 +32,20 @@ public class BankResource {
         setupTestBank(bank);
     }
 
-    public static void setupTestBank(Bank bank) {
-        String one = bank.createAccount("Thomas");
-        String two = bank.createAccount("Michael");
-        try {
-            bank.getAccount(one).deposit(100);
-            bank.getAccount(two).deposit(100);
-        } catch (IOException e) {
-            System.out.println("IOException");
-        } catch (InactiveException e) {
-            System.out.println("Inactive");
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    public Response getAccountNumbers(@Context UriInfo uriInfo) throws IOException {
+        StringBuffer resp = new StringBuffer();
+
+        resp.append("<body><h1>Accounts</h1>");
+        for(String a : bank.getAccountNumbers()) {
+            resp.append("<a href=" + uriInfo.getAbsolutePathBuilder().path(a).build() + ">Account: ");
+            resp.append(bank.getAccount(a).getNumber());
+            resp.append(" of " + bank.getAccount(a).getOwner());
+            resp.append("</a><br />");
         }
-        System.out.println("[BankHandler:setupBank]Done");
+        resp.append("</body>");
+        return Response.ok(resp.toString()).build();
     }
 
     @POST
@@ -77,32 +79,27 @@ public class BankResource {
         }
     }
 
-
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getAccountNumbers(@Context UriInfo uriInfo) throws IOException {
-        StringBuffer response = new StringBuffer();
-
-
-        for(String a : bank.getAccountNumbers()) {
-            response.append(uriInfo.getAbsolutePathBuilder().path(a).build() + "\n");
-        }
-
-        System.out.println(response.toString());
-
-        return response.toString();
-    }
-
-
-    @GET
-    @Produces("application/json")
-    public Bank getJson() { return this.bank; }
-
-
     @GET
     @Produces("application/json")
     @Path("{id}")
     public String getAccountHolderName(@PathParam("id") String path, @Context Request r) throws IOException {
         return this.bank.getAccount(path).getOwner();
     }
+
+
+
+    public static void setupTestBank(Bank bank) {
+        String one = bank.createAccount("Thomas");
+        String two = bank.createAccount("Michael");
+        try {
+            bank.getAccount(one).deposit(100);
+            bank.getAccount(two).deposit(100);
+        } catch (IOException e) {
+            System.out.println("IOException");
+        } catch (InactiveException e) {
+            System.out.println("Inactive");
+        }
+        System.out.println("[BankHandler:setupBank]Done");
+    }
+
 }
