@@ -39,9 +39,9 @@ public class BankResource {
 
         resp.append("<body><h1>Accounts</h1>");
         for(String a : bank.getAccountNumbers()) {
-            resp.append("<a href=" + uriInfo.getAbsolutePathBuilder().path(a).build() + ">Account: ");
-            resp.append(bank.getAccount(a).getNumber());
-            resp.append(" of " + bank.getAccount(a).getOwner());
+            resp.append("<a href=" + uriInfo.getAbsolutePathBuilder().path(a).build() + ">Account ");
+            resp.append(bank.getAccount(a).getNumber() + ": ");
+            resp.append(bank.getAccount(a).getOwner());
             resp.append("</a><br />");
         }
 
